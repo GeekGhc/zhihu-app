@@ -1,0 +1,15 @@
+/*可以在这里添加你自己的css*/
+img{
+	width: 90%;
+	height: auto;
+	padding: 0 0;
+}
+a {
+	text-decoration: none;
+	color: #009fda;
+}
+blockquote {
+	padding: 0.5em 1em;
+	border-left: 3px solid rgba(0, 0, 0, 0.2);
+	font-size: 1em;
+}
