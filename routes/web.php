@@ -17,16 +17,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+//邮件的验证
 Route::get('/email/verify/{token}',['as'=>'email.verify','uses'=>'EmailController@verify']);
 
+//问题的创建和显示视图
 Route::resource('questions','QuestionsController',['names'=>[
     'create'=>'questions.create',
     'show'=>'questions.show'
 ]]);
 
-Route::post('questions/{question}/answer','AnswersController@store');
 
-Route::get('/questions/{question}/follow','QuestionFollowController@follow');
+Route::post('questions/{questionId}/answer','AnswersController@store');//创建问题的答案
+
+Route::get('/questions/{questionId}/follow','QuestionFollowController@follow');//用户关注某个问题
 
 Route::get('notifications','NotificationsController@index');
 

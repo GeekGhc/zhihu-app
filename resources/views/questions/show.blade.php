@@ -27,9 +27,9 @@
                             </comments>
 
                             @if(Auth::check() && Auth::user()->owns($question))
-                                <div class="ui two buttons pull-right">
-                                    <a href="/questions/{{$question->id}}/edit" class="ui basic button green">编辑</a>
-                                    <form href="/questions/{{$question->id}}" method="post" class="delete-form">
+                                <div class="ui action-buttons">
+                                    <a href="/questions/{{$question->id}}/edit" class="ui basic button green action-btn">编辑</a>
+                                    <form href="/questions/{{$question->id}}" method="post" class="delete-form action-btn">
                                         {{method_field('DELETE')}}
                                         {!! csrf_field() !!}
                                         <a class="ui basic button red">删除</a>
@@ -49,6 +49,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading question-follow">
@@ -56,10 +57,6 @@
                         <span>关注者</span>
                     </div>
                     <div class="panel-body">
-                        {{-- <a href="/questions/{{$question->id}}/follow"
-                            class="btn btn-default {{Auth::user()->followed($question->id)?'btn-success':''}}">
-                             {{Auth::user()->followed($question->id)?'已关注':'关注该问题'}}
-                         </a>--}}
                         <question-follow-button question="{{$question->id}}"></question-follow-button>
                         <a href="#editor" class="btn btn-primary">
                             撰写答案
@@ -79,12 +76,11 @@
                         @foreach($question->answers as $answer)
                             <div class="media">
                                 <div class="media-left">
-                                    {{-- <a>
-                                         <img style="width: 36px !important;" height="36" src="{{$answer->user->avatar}}"
-                                              alt="{{$answer->user->name}}">
-                                     </a>--}}
-                                    <user-vote-button answer="{{$answer->id}}"
-                                                      count="{{$answer->votes_count}}"></user-vote-button>
+                                    <user-vote-button
+                                            answer="{{$answer->id}}"
+                                            count="{{$answer->votes_count}}"
+                                    >
+                                    </user-vote-button>
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">

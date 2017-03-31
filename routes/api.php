@@ -22,6 +22,7 @@ Route::get('/topics','TopicsController@index')->middleware('api');//问题话题
 
 Route::post('/question/follower','QuestionFollowController@follower')->middleware('api');
 
+//关注一个问题
 Route::post('/question/follow','QuestionFollowController@followThisQuestion')->middleware('auth:api');
 
 

@@ -8356,7 +8356,7 @@ a.topic:hover {
 .actions {
   display: -webkit-box;
   display: flex;
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 
 .delete-form {

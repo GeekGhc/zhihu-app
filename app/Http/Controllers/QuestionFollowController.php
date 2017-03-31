@@ -16,10 +16,10 @@ class QuestionFollowController extends Controller
         $this->question = $question;
     }
 
-    public function follow($question)
+    //用户关注某个问题
+    public function follow($questionId)
     {
-        Auth::user()->followThis($question);
-
+        Auth::user()->followThis($questionId);
         return back();
     }
 

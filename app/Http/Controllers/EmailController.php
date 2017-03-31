@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class EmailController extends Controller
 {
+    //邮箱验证
     public function verify($token)
     {
         $user = User::where('confirmation_token',$token)->first();

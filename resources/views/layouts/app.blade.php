@@ -77,6 +77,7 @@
                                 <li>
                                     <a href="#">忘记密码</a>
                                 </li>
+                                <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();

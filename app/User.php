@@ -31,54 +31,61 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //是否属于本对象
     public function owns(Model $model)
     {
         return $this->id == $model->user_id;
     }
 
+    //用户---答案
     public function answers()
     {
         return $this->hasMany(Answer::class);
     }
 
+    //用户关注问题多对多关系
     public function follows()
     {
         return $this->belongsToMany(Question::class,'user_question')->withTimestamps();
     }
-
-    public function followThis($question)
+    //用户关注问题
+    public function followThis($questionId)
     {
-        return $this->follows()->toggle($question);
+        return $this->follows()->toggle($questionId);
     }
-
+    //用户是否关注某个问题
     public function followed($question)
     {
         return $this->follows()->where('question_id',$question)->count();
     }
 
+    //用户关注的人
     public function followers()
     {
         return $this->belongsToMany(self::class,'followers','follower_id','followed_id')->withTimestamps();
     }
+    //用户的粉丝
     public function followersUser()
     {
         return $this->belongsToMany(self::class,'followers','followed_id','follower_id')->withTimestamps();
     }
-
+    //用户关注其他用户
     public function followThisUser($user)
     {
      return $this->followers()->toggle($user);
     }
 
+    //用户点赞答案多对多关系
     public function votes()
     {
         return $this->belongsToMany(Answer::class,'votes')->withTimestamps();
     }
+    //用户点赞一个答案
     public function voteFor($answer)
     {
         return $this->votes()->toggle($answer);
     }
-
+    //用户是否已经对一个答案进行点赞
     public function hasVotedFor($answer)
     {
         return !! $this->votes()->where('answer_id',$answer)->count();

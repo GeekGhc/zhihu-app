@@ -7,10 +7,7 @@ use App\Topic;
 
 class QuestionRepository
 {
-    /**
-     * @param $id
-     * @return mixed
-     */
+    //拿到问题的topics和答案
     public function byIdWithTopicsAndAnswers($id)
     {
         return Question::where('id', $id)->with(['topics','answers'])->first();
@@ -39,11 +36,13 @@ class QuestionRepository
         return Question::find($id);
     }
 
+    //拿到所有问题
     public function getQuestionsFeed()
     {
         return Question::published()->latest('updated_at')->with('user')->get();
     }
 
+    //指定问题的评论
     public function getQuestionCommentsById($id)
     {
         $question = Question::with('comments', 'comments.user')->where('id', $id)->first();

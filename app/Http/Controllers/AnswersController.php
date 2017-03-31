@@ -15,16 +15,15 @@ class AnswersController extends Controller
         $this->answer = $answer;
     }
 
-    public function store(StoreAnswerRequest $request,$question)
+    //创建答案
+    public function store(StoreAnswerRequest $request,$questionId)
     {
         $answer = $this->answer->create([
-            'question_id'=>$question,
+            'question_id'=>$questionId,
             'user_id' => Auth::id(),
             'body'=>$request->get('body')
         ]);
-
         $answer->question()->increment('answers_count');
-
         return back();
     }
 }

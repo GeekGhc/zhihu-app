@@ -27,18 +27,19 @@ class Question extends Model
         return $this->belongsTo(User::class);
     }
 
-    //帖子---回复
+    //帖子---答案
     public function answers()
     {
         return $this->hasMany(Answer::class);
     }
 
-    //帖子---关注的人
+    //用户关注问题多对多关系
     public function followers()
     {
         return $this->belongsToMany(User::class,'user_question')->withTimestamps();
     }
 
+    //问题的评论
     public function comments()
     {
         return $this->morphMany('App\Comment','commentable');

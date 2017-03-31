@@ -21,22 +21,14 @@ class QuestionsController extends Controller
         $this->questionRepository = $questionRepository;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //所有问题
     public function index()
     {
         $questions = $this->questionRepository->getQuestionsFeed();
         return view('questions.index',compact('questions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //创建问题视图
     public function create()
     {
         return view('questions.create');
@@ -99,7 +91,6 @@ class QuestionsController extends Controller
             $question->delete();
             return redirect('/');
         }
-
         abort(403,'Forbidden');
     }
 

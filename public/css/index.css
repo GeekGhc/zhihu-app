@@ -1,3 +1,6 @@
+body{
+    background: #f5f5f1 !important;
+}
 .navbar-inverse{
     background: #222831 !important;
 }
@@ -22,4 +25,7 @@
     color: #fff !important;
     font-weight: 700;
     cursor: pointer;
+}
+.dropdown>a{
+    font-size: 16px;
 }

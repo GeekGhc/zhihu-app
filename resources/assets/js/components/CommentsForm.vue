@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <a id="commentForm">
         <button class="button is-naked delete-button"
                 @click="showCommentsForm"
-                v-text="text"
+                v-html="text"
         >发送私信
         </button>
 
@@ -17,8 +17,8 @@
                         </h4>
                     </div>
 
-                    <div class="modal-body">
-                        <div v-if="comments.length > 0">
+                    <div class="modal-body" v-if="comments.length > 0">
+                        <div>
                             <div class="media" v-for="comment in comments">
                                 <div class="media-left">
                                     <a href="#">
@@ -36,15 +36,14 @@
                     <!-- Modal Actions -->
                     <div class="modal-footer">
                         <input type="text" class="form-control" v-model="body">
-                        <button type="button" class="btn btn-primary" @click="store">
+                        <button type="button" class="btn btn-primary publish-comment" @click="store">
                             发表评论
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
+    </a>
 </template>
 
 <script>
@@ -71,7 +70,7 @@
                 return '#'+this.dialog;
             },
             text(){
-                return this.count+'评论';
+                return '<i class="fa fa-comment fa-icon"></i>'+this.count;
             }
         },
         methods: {
@@ -96,3 +95,9 @@
         },
     }
 </script>
+
+<style>
+    .publish-comment{
+        margin-top:10px;
+    }
+</style>

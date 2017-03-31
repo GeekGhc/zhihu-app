@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">修改问题</div>
+                    <div class="panel-heading">编辑问题</div>
 
                     <div class="panel-body">
                         <form action="/questions/{{$question->id}}" method="post">

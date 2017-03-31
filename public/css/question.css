@@ -3,3 +3,23 @@
     font-size: 18px;
     font-weight: bold;
 }
+.actions{
+    display: block !important;
+}
+.action-buttons{
+    display: inline-block;
+    float: right;
+}
+.action-btn{
+    display: inline-block !important;
+    box-sizing: border-box !important;
+}
+#commentForm{
+
+}
+#commentForm .is-naked{
+    font-size: 14px;
+    color: #999;
+    height: 100%;
+    margin-right: 10px;
+}

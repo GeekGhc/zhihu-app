@@ -18,8 +18,8 @@ class CreateAnswersTable extends Migration
             $table->integer('user_id')->index()->unsigned();
             $table->integer('question_id')->index()->unsigned();
             $table->text('body');
-            $table->integer('votes_count')->default(0);
-            $table->integer('comments_count')->default(0);
+            $table->integer('votes_count')->default(0);//答案的点赞数
+            $table->integer('comments_count')->default(0);//答案的回复评论数
             $table->string('is_hidden',8)->default('F');
             $table->string('close_comment',8)->default('F');
             $table->timestamps();

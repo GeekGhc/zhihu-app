@@ -19,6 +19,7 @@ class TopicsController extends Controller
         $this->topic = $topic;
     }
 
+    //拿到对应的Topics
     public function index(Request $request)
     {
         return $this->topic->getTopicsForTagging($request);
