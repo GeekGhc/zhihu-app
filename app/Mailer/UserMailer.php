@@ -7,6 +7,7 @@ use App\User;
 use Auth;
 class UserMailer extends Mailer
 {
+    //新用户关注
     public function followNotifyEmail($email)
     {
         $data = [
@@ -17,6 +18,7 @@ class UserMailer extends Mailer
         $this->sendTo('zhihu_new_user_follow',$email,$data);
     }
 
+    //密码重置
     public function passwordReset($email,$token)
     {
         $data = [
@@ -26,6 +28,7 @@ class UserMailer extends Mailer
         $this->sendTo('zhihu_password_reset',$email,$data);
     }
 
+    //用户注册
     public function welcome(User $user)
     {
         $data = [

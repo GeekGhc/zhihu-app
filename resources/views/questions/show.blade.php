@@ -4,6 +4,7 @@
     @include('vendor.ueditor.assets')
     <div class="container">
         <div class="row">
+
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -54,6 +55,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -108,6 +110,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading question-follow">
@@ -134,6 +137,7 @@
                                         {{$question->user->questions_count}}
                                     </div>
                                 </div>
+
                                 <div class="statics-item text-center">
                                     <div class="statics-text">回答</div>
                                     <div class="statics-count">
@@ -146,6 +150,7 @@
                                         {{$question->user->followers_count}}
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <user-follow-button user="{{$question->user->id}}"></user-follow-button>
@@ -156,8 +161,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 @section('js')
     <!-- 实例化编辑器 -->
     <script type="text/javascript">

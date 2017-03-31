@@ -1,0 +1,25 @@
+.navbar-inverse{
+    background: #222831 !important;
+}
+.navbar-nav > li > .ask-question {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.navbar-nav.navbar-right .ask-question{
+    padding-top: 8px;
+    margin-right: 3rem;
+}
+.fa-icon{
+    margin-right: 6px;
+}
+.navbar-header a{
+    font-size: 26px;
+    font-weight: bolder;
+    color: #00adb5 !important;
+}
+.navbar-nav .nav-link-title{
+    font-size: 18px;
+    color: #fff !important;
+    font-weight: 700;
+    cursor: pointer;
+}

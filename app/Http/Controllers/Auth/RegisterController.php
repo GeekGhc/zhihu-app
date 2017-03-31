@@ -12,16 +12,6 @@ use Naux\Mail\SendCloudTemplate;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
 
     use RegistersUsers;
 
@@ -30,7 +20,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -68,7 +58,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'avatar' => '/images/avatars/default.png',
+            'avatar' => '/images/avatars/elliot.jpg',
             'confirmation_token' => str_random(40),
             'password' => bcrypt($data['password']),
             'api_token'=>str_random(60)
@@ -77,21 +67,10 @@ class RegisterController extends Controller
         return $user;
     }
 
+    //发送验证邮件
     public function sendVerifyEmailTo($user)
     {
         // 模板变量
-       /* $data = [
-            'url' => route('email.verify',['token'=>$user->confirmation_token]),
-            'name'=>$user->name
-        ];
-        $template = new SendCloudTemplate('zhihu_user_register', $data);
-
-        Mail::raw($template, function ($message) use($user){
-            $message->from('ghcz10@outlook.com', 'JellyBean');
-
-            $message->to($user->email);
-        });*/
-
         (new UserMailer())->welcome($user);
     }
 }

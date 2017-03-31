@@ -10,6 +10,7 @@ class Topic extends Model
         'name', 'questions_count','bio'
     ];
 
+    //话题----问题
     public function questions()
     {
         return $this->belongsToMany(Question::class)->withTimestamps();

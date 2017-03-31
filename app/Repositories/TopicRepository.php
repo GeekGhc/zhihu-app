@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 
 use App\Topic;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class TopicRepository
 {

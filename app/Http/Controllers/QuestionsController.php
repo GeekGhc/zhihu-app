@@ -56,16 +56,10 @@ class QuestionsController extends Controller
         return redirect()->route('questions.show', [$question->id]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    //显示问题
     public function show($id)
     {
         $question = $this->questionRepository->byIdWithTopicsAndAnswers($id);
-
         return view('questions.show', compact('question'));
         return $question;
     }

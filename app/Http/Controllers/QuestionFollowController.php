@@ -23,9 +23,9 @@ class QuestionFollowController extends Controller
         return back();
     }
 
+    //
     public function follower(Request $request)
     {
-//        $user = user("api");
         $user =  Auth::guard('api')->user();
 
         $followed = $user->followed($request->get('question'));
@@ -35,6 +35,7 @@ class QuestionFollowController extends Controller
         return response()->json(['followed' => false]);
     }
 
+    //关注该问题
     public function followThisQuestion(Request $request)
     {
         $user =  Auth::guard('api')->user();

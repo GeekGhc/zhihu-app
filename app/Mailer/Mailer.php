@@ -12,10 +12,10 @@ class Mailer
     {
         $content = new SendCloudTemplate($template, $data);
 
-        Mail::raw($content, function ($message)  use($notifiable){
-            $message->from('ghcz10@outlook.com', 'JellyBean');
+        Mail::raw($content, function ($message)  use($email){
+            $message->from('gehuachun@outlook.com', 'JellyBean');
 
-            $message->to($notifiable->email);
+            $message->to($email);
         });
     }
 }

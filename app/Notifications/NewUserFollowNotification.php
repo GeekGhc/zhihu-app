@@ -39,17 +39,6 @@ class NewUserFollowNotification extends Notification
 
     public function toSendCloud($notifiable)
     {
-       /* $data = [
-            'url' => url('http://zhihu.dev'),
-            'name'=> Auth::guard('api')->user()->name,
-        ];
-        $template = new SendCloudTemplate('zhihu_new_user_follow', $data);
-
-        Mail::raw($template, function ($message)  use($notifiable){
-            $message->from('ghcz10@outlook.com', 'JellyBean');
-
-            $message->to($notifiable->email);
-        });*/
         (new UserMailer())->followNotifyEmail($notifiable->email);
     }
 
@@ -57,7 +46,6 @@ class NewUserFollowNotification extends Notification
     {
         return [
             'name'=>Auth::guard('api')->user()->name,
-
         ];
 
     }
