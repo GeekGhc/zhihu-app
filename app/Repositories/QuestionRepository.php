@@ -21,6 +21,7 @@ class QuestionRepository
         return Question::create($attributes);
     }
 
+    //更新问题的标签
     public function normalizeTopics(array $topics)
     {
         return collect($topics)->map(function ($topic) {

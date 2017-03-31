@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/source/semantic.min.css">
     <link rel="stylesheet" href="/css/source/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/question.css">
 
 
 @yield("header-css")

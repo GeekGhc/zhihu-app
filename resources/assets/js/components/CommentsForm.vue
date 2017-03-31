@@ -37,7 +37,7 @@
                     <div class="modal-footer">
                         <input type="text" class="form-control" v-model="body">
                         <button type="button" class="btn btn-primary" @click="store">
-                            评论
+                            发表评论
                         </button>
                     </div>
                 </div>

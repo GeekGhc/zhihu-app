@@ -8,7 +8,9 @@
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{$question->title}}
+                        <span class="header-body">
+                            {{$question->title}}
+                        </span>
                         @foreach($question->topics as $topic)
                             <a class="topic pull-right" href="/topic/{{$topic->id}}">{{$topic->name}}</a>
                         @endforeach
@@ -19,20 +21,30 @@
                     </div>
                     <div class="panel-footer">
                         <div class="actions">
+                            <comments type="question"
+                                      model="{{$question->id}}"
+                                      count="{{$question->comments()->count()}}">
+                            </comments>
+
                             @if(Auth::check() && Auth::user()->owns($question))
-                                <span class="edit">
+                                <div class="ui two buttons pull-right">
+                                    <a href="/questions/{{$question->id}}/edit" class="ui basic button green">编辑</a>
+                                    <form href="/questions/{{$question->id}}" method="post" class="delete-form">
+                                        {{method_field('DELETE')}}
+                                        {!! csrf_field() !!}
+                                        <a class="ui basic button red">删除</a>
+                                    </form>
+                                </div>
+
+                                {{--<span class="edit">
                                 <a href="/questions/{{$question->id}}/edit">编辑</a>
                                 </span>
                                 <form href="/questions/{{$question->id}}" method="post" class="delete-form">
                                     {{method_field('DELETE')}}
                                     {!! csrf_field() !!}
                                     <button class="button is-naked delete-button">删除</button>
-                                </form>
+                                </form>--}}
                             @endif
-                            <comments type="question"
-                                      model="{{$question->id}}"
-                                      count="{{$question->comments()->count()}}">
-                            </comments>
                         </div>
                     </div>
                 </div>

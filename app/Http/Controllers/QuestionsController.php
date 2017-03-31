@@ -43,6 +43,7 @@ class QuestionsController extends Controller
     }
 
 
+    //创建问题
     public function store(StoreQuestionRequest $request)
     {
         $topics = $this->questionRepository->normalizeTopics($request->get('topics'));
@@ -64,12 +65,7 @@ class QuestionsController extends Controller
         return $question;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    //修改问题
     public function edit($id)
     {
         $question = $this->questionRepository->byId($id);
@@ -80,13 +76,7 @@ class QuestionsController extends Controller
         return back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    //问题更新
     public function update(StoreQuestionRequest $request, $id)
     {
         $question = $this->questionRepository->byId($id);
@@ -100,12 +90,7 @@ class QuestionsController extends Controller
         return redirect()->route('questions.show', [$question->id]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    //删除问题
     public function destroy($id)
     {
         $question = $this->questionRepository->byId($id);
