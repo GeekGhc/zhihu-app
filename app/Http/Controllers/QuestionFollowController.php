@@ -23,11 +23,10 @@ class QuestionFollowController extends Controller
         return back();
     }
 
-    //
+    //用户是否关注了这个问题
     public function follower(Request $request)
     {
         $user =  Auth::guard('api')->user();
-
         $followed = $user->followed($request->get('question'));
         if($followed){
             return response()->json(['followed' => true]);
@@ -39,14 +38,13 @@ class QuestionFollowController extends Controller
     public function followThisQuestion(Request $request)
     {
         $user =  Auth::guard('api')->user();
-//        $user = user("api");
         $question  = $this->question->byId($request->get('question'));
         $followed = $user->followThis($question->id);
-        if(count($followed['detached'])>0){
+
+        if(count($followed['detached'])>0){//如果是取消关注
             $question->decrement('followers_count');
             return response()->json(['followed' => false]);
         }
-
         $question->increment('followers_count');
         return response()->json(['followed' => true]);
     }

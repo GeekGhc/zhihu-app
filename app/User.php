@@ -54,9 +54,9 @@ class User extends Authenticatable
         return $this->follows()->toggle($questionId);
     }
     //用户是否关注某个问题
-    public function followed($question)
+    public function followed($questionId)
     {
-        return $this->follows()->where('question_id',$question)->count();
+        return $this->follows()->where('question_id',$questionId)->count();
     }
 
     //用户关注的人

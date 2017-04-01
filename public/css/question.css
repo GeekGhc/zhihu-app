@@ -7,15 +7,13 @@
     display: block !important;
 }
 .action-buttons{
-    display: inline-block;
+
     float: right;
 }
 .action-btn{
     display: inline-block !important;
     box-sizing: border-box !important;
-}
-#commentForm{
-
+    float: right;
 }
 #commentForm .is-naked{
     font-size: 14px;

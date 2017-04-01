@@ -17,13 +17,13 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+Route::get('/test', 'AnswersController@test')->middleware("auth:api");
 
 Route::get('/topics','TopicsController@index')->middleware('api');//问题话题api
 
-Route::post('/question/follower','QuestionFollowController@follower')->middleware('api');
 
-//关注一个问题
-Route::post('/question/follow','QuestionFollowController@followThisQuestion')->middleware('auth:api');
+Route::post('/question/follower','QuestionFollowController@follower')->middleware('api');//用户是否关注了一个问题
+Route::post('/question/follow','QuestionFollowController@followThisQuestion')->middleware('auth:api');//用户关注一个问题
 
 
 Route::get('user/followers/{id}','FollowersController@index');

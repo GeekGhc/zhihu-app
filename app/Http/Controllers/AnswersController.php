@@ -10,6 +10,13 @@ use Auth;
 class AnswersController extends Controller
 {
     protected $answer;
+    public function test(){
+        $user =  Auth::guard('api')->user()->id();
+        dd($user);
+//        $followed = $user->follows();
+
+    }
+
     public function __construct(AnswerRepository $answer)
     {
         $this->answer = $answer;

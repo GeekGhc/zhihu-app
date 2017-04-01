@@ -27,23 +27,24 @@
                             </comments>
 
                             @if(Auth::check() && Auth::user()->owns($question))
-                                <div class="ui action-buttons">
+                                {{--<div class="ui action-buttons">
                                     <a href="/questions/{{$question->id}}/edit" class="ui basic button green action-btn">编辑</a>
                                     <form href="/questions/{{$question->id}}" method="post" class="delete-form action-btn">
                                         {{method_field('DELETE')}}
                                         {!! csrf_field() !!}
                                         <a class="ui basic button red">删除</a>
                                     </form>
-                                </div>
-
-                                {{--<span class="edit">
+                                </div>--}}
+                                <div class="ui action-buttons">
+                                <span class="edit">
                                 <a href="/questions/{{$question->id}}/edit">编辑</a>
                                 </span>
                                 <form href="/questions/{{$question->id}}" method="post" class="delete-form">
                                     {{method_field('DELETE')}}
                                     {!! csrf_field() !!}
                                     <button class="button is-naked delete-button">删除</button>
-                                </form>--}}
+                                </form>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -101,13 +102,11 @@
                             <form action="/questions/{{$question->id}}/answer" method="post">
                                 {!! csrf_field() !!}
                                 <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                    <script id="container" name="body" type="text/plain" style="height:120px;">
-                                        {!! old('body') !!}
-                                    </script>
+                                   <ueditor></ueditor>
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
-                                    </span>
+                                        </span>
                                     @endif
                                 </div>
                                 <button type="submit" class="btn btn-success pull-right">提交答案</button>
@@ -173,23 +172,4 @@
         </div>
     </div>
 
-@section('js')
-    <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-        var ue = UE.getEditor('container', {
-            toolbars: [
-                ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
-            ],
-            elementPathEnabled: false,
-            enableContextMenu: false,
-            autoClearEmptyNode: true,
-            wordCount: false,
-            imagePopup: false,
-            autotypeset: {indent: true, imageBlockLine: 'center'}
-        });
-        ue.ready(function () {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-        });
-    </script>
-@endsection
 @endsection
