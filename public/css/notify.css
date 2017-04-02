@@ -5,6 +5,19 @@
     border-bottom: 1px solid #eee ;
 }
 .notifications>a{
-    color: #00b1b3;
+    color: #00989a;
+    font-weight: bold;
+}
+
+.tab-pane .media,.message-list .media{
+    padding: 14px 14px;
+    border-bottom: 1px solid #eee;
+    margin-top:0 !important;
+}
+.tab-pane .media .media-body>p>a{
+    color:#262626;
+}
+.tab-pane .media .media-body .media-heading a{
+    color: #00989a;
     font-weight: bold;
 }

@@ -10,11 +10,10 @@
                         <form action="/inbox/{{$dialogId}}/store" method="post">
                             {{csrf_field()}}
                             <div class="form-group">
-                                <textarea class="form-control" name="body">
-                                </textarea>
+                                <textarea class="form-control" name="body"></textarea>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success pull-right">发送私信</button>
+                                <button class="ui button teal pull-right">发送私信</button>
                             </div>
                         </form>
                         <div class="message-list">

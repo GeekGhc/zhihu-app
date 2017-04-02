@@ -52,12 +52,13 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon-lg"></i>写问题</a></li>
-                    <li><a href="{{url('/notifications')}}" class="user-notify-bell"><i class="fa fa-bell"></i></a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">登 录</a></li>
                         <li><a href="{{ url('/register') }}">注 册</a></li>
                     @else
+                        <li><a href="{{url('/messages')}}" class="user-notify-bell"><i class="fa fa-bell"></i></a></li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">

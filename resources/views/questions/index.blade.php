@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                @foreach($questions as $question)
+                {{--@foreach($questions as $question)
                     <div class="media">
                         <div class="media-left">
                             <a>
@@ -17,7 +17,11 @@
                             </h4>
                         </div>
                     </div>
-                @endforeach
+                @endforeach--}}
+                <h2 class="ui dividing header">最新动态</h2>
+                <div class="feed-list">
+                    <div class="feed-iem"></div>
+                </div>
             </div>
         </div>
     </div>

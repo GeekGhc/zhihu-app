@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 class MessagesController extends Controller
 {
     protected $message;
+
     public function __construct(MessageRepository $message)
     {
         $this->message = $message;
+        $this->middleware('auth');
     }
 
     //保存私信内容

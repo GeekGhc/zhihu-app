@@ -27,6 +27,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{comment.user.name}}</h4>
+                                    <span class="media-comment-time">2017-07-02</span>
                                     {{comment.body}}
                                 </div>
                             </div>

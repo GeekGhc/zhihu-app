@@ -32,9 +32,9 @@ Route::post('questions/{questionId}/answer','AnswersController@store');//创建�
 
 Route::get('/questions/{questionId}/follow','QuestionFollowController@follow');//用户关注某个问题
 
-//用户的站内信通知
-Route::get('notifications','NotificationsController@index');
+
+Route::get('messages','NotificationsController@index');//用户的站内信通知
 
 Route::get('inbox','InboxController@index');
-Route::get('inbox/{dialogId}','InboxController@show');
-Route::post('inbox/{dialogId}/store','InboxController@store');
+Route::get('inbox/{dialogId}','InboxController@show');//私信消息详情
+Route::post('inbox/{dialogId}/store','InboxController@store');//私信回复
