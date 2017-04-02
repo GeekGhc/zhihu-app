@@ -181,6 +181,14 @@ a.topic{
 .feed-item .feed-content h4 {
     margin-right: 20px;
 }
+.feed-item .feed-author{
+    margin:6px 0;
+}
+.feed-item .feed-author>span{
+    color: #00989a;
+    font-weight: bold;
+    margin-right: 8px;
+}
 .feed-main .feed-item-body{
     position: relative;
     margin-top: 8px;
@@ -188,13 +196,12 @@ a.topic{
 }
 .feed-meta{
     display: block;
-    line-height: 30px;
 }
-.feed-meta .feed-media-panel{
-    padding:5px 0;
+.feed-meta .feed-meta-panel{
+    padding: 5px 0;
 }
-.feed-meta .feed-media-panel .meta-item{
+.feed-meta .feed-meta-panel .meta-item{
     color: #8590a6;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-right: 18px;
 }
