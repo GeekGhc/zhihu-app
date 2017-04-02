@@ -91,11 +91,13 @@ class User extends Authenticatable
         return !! $this->votes()->where('answer_id',$answer)->count();
     }
 
+    //用户的私信
     public function messages()
     {
         return $this->hasMany(Message::class,'to_user_id');
     }
 
+    //发送密码重置
     public function sendPasswordResetNotification($token)
     {
         (new UserMailer())->passwordReset($this->email,$token);

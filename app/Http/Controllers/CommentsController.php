@@ -41,31 +41,26 @@ class CommentsController extends Controller
         $this->comment = $comment;
     }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
+    //答案的评论
     public function answer($id)
     {
         return $this->answer->getAnswerCommentsById($id);
     }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
+    //问题的评论
     public function question($id)
     {
         return $this->question->getQuestionCommentsById($id);
     }
 
-    /**
-     * @return static
-     */
+    //用户评论
     public function store()
     {
         $model = $this->getModelNameFromType(request('type'));
-
+        if(request('type')==='question'){
+            $this->question->addCommentsCount(request('model'));
+        }
+        $this->answer->addCommentsCount(request('model'));
         return  $this->comment->create([
             'commentable_id'=>request('model'),
             'commentable_type'=>$model,
@@ -75,10 +70,7 @@ class CommentsController extends Controller
 
     }
 
-    /**
-     * @param $type
-     * @return string
-     */
+    //判断评论类型
     public function getModelNameFromType($type)
     {
         return $type === 'question' ? 'App\Question' : 'App\Answer';

@@ -126,8 +126,10 @@ a.topic{
     font-size: 14px;
     color: #8590a6;
 }
-.answer-item .answer-item-actions .answer-item-action{
+.answer-item-action{
     margin-left: 20px;
+    display: inline-block;
+    color: #8590a6;
 }
 #commentForm .is-naked{
     font-size: 14px;
@@ -144,4 +146,11 @@ a.topic{
 }
 .media .user-statics{
     margin-bottom: 10px;
+}
+.about-question{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-question>h2{
+    margin-bottom: 4px;
 }

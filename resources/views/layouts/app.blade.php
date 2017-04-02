@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="/css/source/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/question.css">
-
-
-@yield("header-css")
+    <link rel="stylesheet" href="/css/notify.css">
+    @yield("header-css")
 
 <!-- Scripts -->
     <script>
@@ -53,6 +52,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon-lg"></i>写问题</a></li>
+                    <li><a href="{{url('/notifications')}}" class="user-notify-bell"><i class="fa fa-bell"></i></a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">登 录</a></li>

@@ -14,6 +14,7 @@ class MessagesController extends Controller
         $this->message = $message;
     }
 
+    //保存私信内容
     public function store()
     {
         $message = $this->message->create([
@@ -23,11 +24,11 @@ class MessagesController extends Controller
             'dialog_id'=>time().Auth::id(),
         ]);
 
+        //成功创建数据
         if($message){
             return response()->json(['status'=>true]);
         }
         return response()->json(['status'=>false]);
-
 
     }
 }

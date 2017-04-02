@@ -39,7 +39,7 @@ class Question extends Model
         return $this->belongsToMany(User::class,'user_question')->withTimestamps();
     }
 
-    //问题的评论
+    //问题---评论
     public function comments()
     {
         return $this->morphMany('App\Comment','commentable');

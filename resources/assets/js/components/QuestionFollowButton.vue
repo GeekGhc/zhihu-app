@@ -32,7 +32,7 @@
         },
         computed: {
             text(){
-                return this.followed ? '已关注' : '关注该问题';
+                return this.followed ? '已关注' : '关注问题';
             }
         }
     }

@@ -29,12 +29,15 @@ Route::post('/question/follow','QuestionFollowController@followThisQuestion')->m
 Route::get('user/followers/{id}','FollowersController@index');
 Route::post('user/follow','FollowersController@follow');
 
-Route::post('/answer/{id}/votes/users','VotesController@users');
-Route::post('/answer/vote','VotesController@vote');
+Route::post('/answer/{id}/votes/users','VotesController@isVoted');//用户是否虽一个答案进行点赞
+Route::post('/answer/vote','VotesController@vote');//用户点赞一个答案
 
-Route::post('/message/store','MessagesController@store');
 
+Route::post('/message/store','MessagesController@store');//用户发送私信
+
+//回答或者问题的评论
 Route::get('/answer/{id}/comments','CommentsController@answer');
 Route::get('/question/{id}/comments','CommentsController@question');
 
-Route::post('/comment','CommentsController@store');
+
+Route::post('/comment','CommentsController@store');//用户评论

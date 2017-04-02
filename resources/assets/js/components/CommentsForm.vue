@@ -45,7 +45,28 @@
         </div>
     </a>
 </template>
-
+<style scoped>
+    .media-body{
+        color:#000;
+    }
+    .modal-title{
+        color:#1e1e1e;
+    }
+    .media-body .media-heading{
+        color:#00b1b3;
+    }
+    .modal-body{
+        padding-top:0 !important;
+    }
+    .media{
+        margin-top:0 !important;
+        padding: 12px 0 10px;
+        border-bottom: 1px solid #f0f2f7;
+    }
+    .media:last-child{
+        border:none;
+    }
+</style>
 <script>
     export default {
         props: ['type','model','count'],
@@ -53,13 +74,6 @@
             return {
                 body: '',
                 comments:[],
-                newComment:{
-                    user:{
-                        name:Zhihu.name,
-                        avatar:Zhihu.avatar
-                    },
-                    'body':'',
-                },
             }
         },
         computed:{
@@ -76,10 +90,15 @@
         methods: {
             store(){
                 this.$http.post('/api/comment', {'type': this.type,'model':this.model,'body':this.body}).then(response => {
-                    console.log(response.data)
-                    this.newComment.body = response.data.body;
-                    this.comments.push(this.newComment);
-                    this.body = '';
+                    let comment = {
+                        user : {
+                            name:Zhihu.name,
+                            avatar:Zhihu.avatar
+                        },
+                        body: response.data.body
+                    }
+                    this.comments.push(omment)
+                    this.body = ''
                     this.count++;
                 })
             },

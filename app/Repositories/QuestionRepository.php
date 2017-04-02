@@ -49,4 +49,11 @@ class QuestionRepository
 
         return $question->comments;
     }
+
+    //增问题的评论数
+    public function addCommentsCount($id)
+    {
+        $question = Question::find($id);
+        $question->increment('comments_count');
+    }
 }

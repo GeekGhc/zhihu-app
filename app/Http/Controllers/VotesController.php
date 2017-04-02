@@ -15,7 +15,8 @@ class VotesController extends Controller
         $this->answer = $answer;
     }
 
-    public function users($id)
+    //用户是否对答案进行了点赞
+    public function isVoted($id)
     {
         if(user('api')->hasVotedFor($id)){
             return response()->json(['voted'=>true]);
@@ -23,6 +24,7 @@ class VotesController extends Controller
         return response()->json(['voted'=>false]);
     }
 
+    //用户对答案点赞
     public function vote()
     {
         $answer = $this->answer->byId(request('answer'));
@@ -32,9 +34,7 @@ class VotesController extends Controller
             $answer->increment('votes_count');
             return response()->json(['voted' => true]);
         }
-
         $answer->decrement('votes_count');
-
         return response()->json(['voted' => false]);
     }
 }

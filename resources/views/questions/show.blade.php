@@ -25,6 +25,17 @@
                                           model="{{$question->id}}"
                                           count="{{$question->comments()->count()}}">
                                 </comments>
+                                <div class="answer-item-action">
+                                    <i class="fa fa-paper-plane fa-icon-sm"></i>
+                                    分享
+                                </div>
+                                <div class="answer-item-action">
+                                    <i class="fa fa-star fa-icon-sm"></i>
+                                    收藏
+                                </div>
+                                <div class="answer-item-action">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </div>
 
                                 @if(Auth::check() && Auth::user()->owns($question))
                                     <div class="ui action-buttons">
@@ -41,7 +52,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                            <div class="question-follow">
+                            <div class="about-question">
                                 <h2>{{ $question->followers_count }}</h2>
                                 <span>关注者</span>
                             </div>
@@ -196,5 +207,4 @@
             </div>
         </div>
     </div>
-
 @endsection
