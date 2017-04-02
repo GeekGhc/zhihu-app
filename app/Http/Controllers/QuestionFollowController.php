@@ -24,7 +24,7 @@ class QuestionFollowController extends Controller
     }
 
     //用户是否关注了这个问题
-    public function follower(Request $request)
+    public function isFollow(Request $request)
     {
         $user =  Auth::guard('api')->user();
         $followed = $user->followed($request->get('question'));

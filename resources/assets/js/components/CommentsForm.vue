@@ -70,7 +70,7 @@
                 return '#'+this.dialog;
             },
             text(){
-                return '<i class="fa fa-comment fa-icon"></i>'+this.count;
+                return '<i class="fa fa-comment fa-icon-lg"></i>'+this.count+'条评论';
             }
         },
         methods: {

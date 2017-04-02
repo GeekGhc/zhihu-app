@@ -32,6 +32,7 @@ Route::post('questions/{questionId}/answer','AnswersController@store');//创建�
 
 Route::get('/questions/{questionId}/follow','QuestionFollowController@follow');//用户关注某个问题
 
+//用户的站内信通知
 Route::get('notifications','NotificationsController@index');
 
 Route::get('inbox','InboxController@index');

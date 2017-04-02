@@ -60,19 +60,19 @@ class User extends Authenticatable
     }
 
     //用户关注的人
-    public function followers()
+    public function followings()
     {
         return $this->belongsToMany(self::class,'followers','follower_id','followed_id')->withTimestamps();
     }
     //用户的粉丝
-    public function followersUser()
+    public function followers()
     {
         return $this->belongsToMany(self::class,'followers','followed_id','follower_id')->withTimestamps();
     }
     //用户关注其他用户
     public function followThisUser($user)
     {
-     return $this->followers()->toggle($user);
+     return $this->followings()->toggle($user);
     }
 
     //用户点赞答案多对多关系

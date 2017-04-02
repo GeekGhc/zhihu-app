@@ -38,12 +38,12 @@ a.topic:hover{
     text-decoration: none;
 }
 
-.question-follow{
+.about-author{
     text-align: center;
 }
 
 .user-statics ,.user-actions{
-    margin-top:20px;
+    margin-top:10px;
 }
 
 .user-statics{

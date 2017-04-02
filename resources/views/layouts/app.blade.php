@@ -52,7 +52,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon"></i>写问题</a></li>
+                    <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon-lg"></i>写问题</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">登 录</a></li>

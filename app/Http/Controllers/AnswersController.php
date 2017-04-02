@@ -11,7 +11,7 @@ class AnswersController extends Controller
 {
     protected $answer;
     public function test(){
-        $user =  Auth::guard('api')->user()->id();
+        $user =  Auth::guard('api')->user()->id;
         dd($user);
 //        $followed = $user->follows();
 

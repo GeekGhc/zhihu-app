@@ -21,17 +21,18 @@ class FollowersController extends Controller
         $this->user = $user;
     }
 
+    //该用户是否关注了这个用户
     public function index($id)
     {
         $user = $this->user->byId($id);
-        $followers = $user->followersUser()->pluck('follower_id')->toArray();
+        $followers = $user->followers()->pluck('follower_id')->toArray();
         if(in_array(Auth::guard('api')->user()->id,$followers)){
             return response()->json(['followed'=>true]);
         }
-
         return response()->json(['followed'=>false]);
     }
 
+    //关注一个用户
     public function follow()
     {
         $userToFollow = $this->user->byId(request('user'));

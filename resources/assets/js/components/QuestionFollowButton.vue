@@ -12,7 +12,7 @@
         props:['question'],
         mounted() {
 //            console.log(this.question+"--"+this.user);
-            this.$http.post('/api/question/follower',{'question':this.question}).then(response => {
+            this.$http.post('/api/question/isFollow',{'question':this.question}).then(response => {
                 this.followed = response.data.followed;
                 console.log("question followed is "+response.data.followed);
             })

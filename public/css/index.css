@@ -12,7 +12,10 @@ body{
     padding-top: 8px;
     margin-right: 3rem;
 }
-.fa-icon{
+.fa-icon-sm{
+    margin-right: 4px;
+}
+.fa-icon-lg{
     margin-right: 6px;
 }
 .navbar-header a{

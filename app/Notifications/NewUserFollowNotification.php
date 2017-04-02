@@ -39,7 +39,7 @@ class NewUserFollowNotification extends Notification
 
     public function toSendCloud($notifiable)
     {
-        (new UserMailer())->followNotifyEmail($notifiable->email);
+//        (new UserMailer())->followNotifyEmail($notifiable->email);
     }
 
     public function toDatabase($notifiable)
