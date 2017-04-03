@@ -15,9 +15,7 @@ class SettingController extends Controller
     //用户设置保存
     public function store(Request $request)
     {
-        $settings = array_merge(user()->setting,array_only($request->all(),['city','site','github','bio']));
-
-        user()->update(['setting'=>$settings]);
+        user()->settings()->merge($request->all());
 
         return back();
     }

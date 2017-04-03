@@ -35,6 +35,11 @@ class User extends Authenticatable
         'setting'=>'array'
     ];
 
+    public function settings()
+    {
+        return new Setting($this);
+    }
+
     //是否属于本对象
     public function owns(Model $model)
     {
