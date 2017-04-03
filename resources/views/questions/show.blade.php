@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('vendor.ueditor.assets')
+    {{--@include('vendor.ueditor.assets')--}}
     <div class="question-panel">
         <div class="question-wrapper">
             <div class="container">
