@@ -59,31 +59,35 @@
                     @else
                         <li><a href="{{url('/messages')}}" class="user-notify-bell"><i class="fa fa-bell"></i></a></li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                        <li>
+                            <a href="#">
+                                {{ Auth::user()->name }}
                             </a>
-
+                        </li>
+                        <li>
+                            <a class="nav-header-avatar dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false" style="padding: 6px 15px 6px 0px;">
+                                <img src="{{Auth::user()->avatar}}">
+                            </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="#">我的帖子</a>
+                                    <a href="#"><i class="fa fa-cloud fa-icon-lg"></i>我的帖子</a>
                                 </li>
                                 <li>
-                                    <a href="/avatar">修改头像</a>
+                                    <a href="/avatar"><i class="fa fa-user fa-icon-lg"></i>修改头像</a>
                                 </li>
                                 <li>
-                                    <a href="/password">修改密码</a>
+                                    <a href="/password"><i class="fa fa-cog fa-icon-lg"></i>修改密码</a>
                                 </li>
                                 <li>
-                                    <a href="/setting">个人设置</a>
+                                    <a href="/setting"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        退出登录
+                                        <i class="fa fa-sign-out fa-icon-lg"></i>退出登录
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST"

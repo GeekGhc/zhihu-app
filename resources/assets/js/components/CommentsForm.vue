@@ -67,6 +67,10 @@
     .media:last-child{
         border:none;
     }
+    .media-comment-time{
+        color: #8590a6;
+        floated:right;
+    }
 </style>
 <script>
     export default {

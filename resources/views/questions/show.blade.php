@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                                     <div class="answer-item-time">
-                                    发布于 2017-02-05
+                                    发布于 {{$answer->created_at->format('Y-m-d')}}
                                 </div>
                                 <div class="answer-item-actions">
                                     <user-vote-button

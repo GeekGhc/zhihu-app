@@ -35,3 +35,8 @@ body{
 .user-notify-bell{
     font-size: 18px;
 }
+.nav-header-avatar img{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
