@@ -4,6 +4,8 @@
 </template>
 
 <script>
+    import '../../../../public/vendor/ueditor/ueditor.config.js'
+    import '../../../../public/vendor/ueditor/ueditor.all.js'
     export default{
         data(){
             return{

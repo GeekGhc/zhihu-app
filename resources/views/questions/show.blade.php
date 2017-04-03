@@ -69,12 +69,14 @@
     </div>
     <div class="container">
         <div class="row">
+
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{$question->answers_count}}个答案
                     </div>
 
+                    @if($question->answers_count !== 0)
                     <div class="panel-body">
 
                         @foreach($question->answers as $answer)
@@ -122,6 +124,12 @@
 
 
                     </div>
+                    @else
+                        <div class="panel-body question-empty-panel">
+                            <i>╮(╯∀╰)╭</i>
+                            <span class="empty-tips">暂时还没有评论</span>
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -190,7 +198,9 @@
                             <form action="/questions/{{$question->id}}/answer" method="post">
                                 {!! csrf_field() !!}
                                 <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                    <ueditor></ueditor>
+                                    <div id="container" name="body" type="text/plain" style="height:200px;">
+                                        {!! old('body') !!}
+                                    </div>
                                     @if ($errors->has('body'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
@@ -207,4 +217,22 @@
             </div>
         </div>
     </div>
+    @section('js')
+        <script>
+            var ue = UE.getEditor('container', {
+                toolbars: [
+                    ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
+                ],
+                elementPathEnabled: false,
+                enableContextMenu: false,
+                autoClearEmptyNode: true,
+                wordCount: false,
+                imagePopup: false,
+                autotypeset: {indent: true, imageBlockLine: 'center'}
+            });
+            ue.ready(function () {
+                ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
+            });
+        </script>
+    @endsection
 @endsection

@@ -31,9 +31,9 @@
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body">描述</label>
 
-                                <script id="container" name="body" type="text/plain" style="height:200px;">
+                                <div id="container" name="body" type="text/plain" style="height:200px;">
                                     {!! old('body') !!}
-                                </script>
+                                </div>
 
                                 @if ($errors->has('body'))
                                     <span class="help-block">
@@ -51,10 +51,10 @@
         </div>
     </div>
 
-
 @section('js')
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
+
         var ue = UE.getEditor('container', {
             toolbars: [
                 ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
@@ -69,6 +69,7 @@
         ue.ready(function () {
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
+
         $(function () {
             function formatTopic (topic) {
                 return "<div class='select2-result-repository clearfix'>" +
@@ -110,3 +111,4 @@
     </script>
 @endsection
 @endsection
+

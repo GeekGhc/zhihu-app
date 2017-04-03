@@ -35,6 +35,10 @@
 .question-panel-main .question-panel-detail{
     font-size: 15px;
     line-height: 27px;
+    display: table;
+}
+.question-panel-detail img{
+    max-width: 100%;
 }
 .question-panel-main .question-panel-footer{
     padding-bottom: 12px;
@@ -154,7 +158,12 @@ a.topic{
 .about-question>h2{
     margin-bottom: 4px;
 }
-
+.question-empty-panel{
+    padding:20px !important;
+    font-size: 24px;
+    text-align: center;
+    color: #aaa;
+}
 /***************** index *********************/
 .feed-list{
 
