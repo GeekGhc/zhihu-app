@@ -5,8 +5,12 @@
     border-bottom: 1px solid #eee ;
 }
 .notifications>a{
+    color: #333;
+}
+.notifications>a>span{
     color: #00989a;
-    font-weight: bold;
+    font-weight: 600;
+    margin-right: 10px;
 }
 .nav-message-tabs{
     margin-bottom: 12px;
@@ -25,4 +29,7 @@
 .tab-pane .media .media-body .media-heading a{
     color: #00989a;
     font-weight: bold;
+}
+.tab-pane .notifications.unread{
+    background: #fff9ea;
 }

@@ -32,7 +32,7 @@ class MessageRepository
         return Message::where('dialog_id',$dialogId)->latest()->get();
     }
 
-    
+
     public function getSingleMessage($dialogId)
     {
         return Message::where('dialog_id',$dialogId)->first();

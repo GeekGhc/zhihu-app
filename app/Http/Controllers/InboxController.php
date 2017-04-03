@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Notifications\NewMessageNotification;
 use App\Repositories\MessageRepository;
 use Auth;
 use Illuminate\Http\Request;
@@ -41,12 +42,15 @@ class InboxController extends Controller
     {
         $message = Message::where('dialog_id',$dialogId)->first();
         $toUserId = $message->from_user_id === user()->id ? $message->to_user_id : $message->from_user_id;
-        $this->message->create([
+        $newMessage = $this->message->create([
             'from_user_id'=>Auth::id(),
             'to_user_id'=> $toUserId,
             'body'=>request('body'),
             'dialog_id'=>$dialogId
         ]);
+
+        //回复私信的消息通知
+        $newMessage->toUser->notify(new NewMessageNotification($newMessage));
         return back();
     }
 }

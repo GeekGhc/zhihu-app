@@ -6,6 +6,7 @@ use App\Message;
 use App\Repositories\MessageRepository;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\DatabaseNotification;
 
 class NotificationsController extends Controller
 {
@@ -23,5 +24,12 @@ class NotificationsController extends Controller
         $messages = $this->message->getAllMessages();
         $user = Auth::user();
         return view('notifications.index',['messages'=>$messages->unique('dialog_id'),'user'=>$user]);
+    }
+
+    //标志私信已读
+    public function show(DatabaseNotification $message)
+    {
+        $message->markAsRead();
+        return redirect(Request::query('redirect_url'));
     }
 }

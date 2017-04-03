@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Repositories\MessageRepository;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\DatabaseNotification;
 
 class MessagesController extends Controller
 {
