@@ -22,6 +22,6 @@ class Setting
     public function merge(array $attributes)
     {
         $settings = array_merge($this->user->setting,array_only($attributes,$this->allowd));
-        return $this->user->update();
+        return $this->user->update(['setting'=>$settings]);
     }
 }
