@@ -73,6 +73,9 @@
                                     <a href="#">我的回答</a>
                                 </li>
                                 <li>
+                                    <a href="/avatar">修改头像</a>
+                                </li>
+                                <li>
                                     <a href="#">修改密码</a>
                                 </li>
                                 <li>

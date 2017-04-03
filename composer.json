@@ -10,6 +10,7 @@
         "laracasts/flash": "^2.0",
         "laravel/framework": "5.3.*",
         "naux/sendcloud": "^1.1",
+        "overtrue/laravel-filesystem-qiniu": "^0.0.2",
         "overtrue/laravel-ueditor": "~1.0"
     },
     "require-dev": {

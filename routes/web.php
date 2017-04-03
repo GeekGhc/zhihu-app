@@ -42,3 +42,4 @@ Route::post('inbox/{dialogId}/store','InboxController@store');//私信回复
 
 
 Route::get("/avatar",'UsersController@avatar');//用户头像
+Route::post("/avatar",'UsersController@changeAvatar');//修改用户头像
