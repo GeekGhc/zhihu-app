@@ -13,17 +13,18 @@ class MessagesController extends Controller
     public function __construct(MessageRepository $message)
     {
         $this->message = $message;
-        $this->middleware('auth');
     }
 
     //保存私信内容
     public function store()
     {
+        $toUserId = request('user');
+        $fromUserId = user('api')->id;
         $message = $this->message->create([
             'to_user_id'=>request('user'),
             'from_user_id'=> user('api')->id,
             'body'=>request('body'),
-            'dialog_id'=>time().Auth::id(),
+            'dialog_id'=> $fromUserId.$toUserId,
         ]);
 
         //成功创建数据
@@ -31,6 +32,5 @@ class MessagesController extends Controller
             return response()->json(['status'=>true]);
         }
         return response()->json(['status'=>false]);
-
     }
 }

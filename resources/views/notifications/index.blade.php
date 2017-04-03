@@ -15,7 +15,7 @@
                         <a href="#commonMsg" aria-controls="commonMsg" role="tab" data-toggle="tab">消息通知</a>
                     </li>
                     <li role="presentation">
-                        <a href="#privateMsg" aria-controls="privateMsg" role="tab" data-toggle="tab">私信通知</a>
+                        <a href="#privateMsg" aria-controls="privateMsg" role="tab" data-toggle="tab">私信列表</a>
                     </li>
                 </ul>
 
@@ -27,29 +27,29 @@
                         @endforeach
                     </div>
                     <div role="tabpanel" class="tab-pane" id="privateMsg">
-                        @foreach($messages as $key=>$messageGroup)
-                            <div class="media">
+                        @foreach($messages as $message)
+                            <div class="media {{$message->shouldAddUnreadClass()?'unread':''}}">
                                 <div class="media-left">
                                     <a href="#">
-                                        @if(Auth::id() === $key)
-                                            <img src="{{ $messageGroup->first()->fromUser->avatar }}" style="width: 40px;height: 40px;">
+                                        @if(Auth::id() === $message->to_user_id)
+                                            <img src="{{ $message->fromUser->avatar }}" style="width: 40px;height: 40px;">
                                         @else
-                                            <img src="{{ $messageGroup->first()->toUser->avatar }}" style="width: 40px;height: 40px;">
+                                            <img src="{{ $message->toUser->avatar }}" style="width: 40px;height: 40px;">
                                         @endif
                                     </a>
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">
                                         <a href="#">
-                                            @if(Auth::id() === $key)
-                                                {{ $messageGroup->first()->fromUser->name }}
+                                            @if(Auth::id() === $message->to_user_id)
+                                                {{ $message->fromUser->name }}
                                             @else
-                                                {{ $messageGroup->first()->toUser->name }}
+                                                {{ $message->toUser->name }}
                                             @endif
                                         </a>
                                     </h4>
-                                    <p><a href="/inbox/{{$messageGroup->last()->dialog_id}}">
-                                            {{ $messageGroup->last()->body }}
+                                    <p><a href="/inbox/{{$message->dialog_id}}">
+                                            {{ $message->body }}
                                         </a></p>
                                 </div>
                             </div>

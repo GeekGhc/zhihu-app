@@ -11,11 +11,16 @@ class NotificationsController extends Controller
     //用户的站内信
     public function index()
     {
+
         $messages = Message::where('to_user_id',user()->id)
             ->orWhere('from_user_id',user()->id)
-            ->with(['fromUser','toUser'])->get();
+            ->with(['fromUser'=>function($query){
+                return $query->select(['id','name','avatar']);
+            },'toUser'=>function($query){
+                return $query->select(['id','name','avatar']);
+            }])->latest()->get();
 
         $user = Auth::user();
-        return view('notifications.index',['messages'=>$messages->unique('dialog_id')->groupBy('to_user_id'),'user'=>$user]);
+        return view('notifications.index',['messages'=>$messages->unique('dialog_id'),'user'=>$user]);
     }
 }

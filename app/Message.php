@@ -20,4 +20,34 @@ class Message extends Model
     {
         return  $this->belongsTo('App\User','to_user_id');
     }
+
+    //标志私信已读
+    public function markAsRead()
+    {
+        if(is_null($this->read_at)){
+            $this->forceFill(['has_read'=>'T','read_at'=>$this->freshTimestamp()])->save();
+        }
+    }
+
+    public function newCollection(array $models = [])
+    {
+        return new MessageCollection($models);
+    }
+
+    //判断消息是否是已读
+    public function read()
+    {
+        return $this->has_read === 'T';
+    }
+    public function unRead()
+    {
+        return $this->has_read === 'F';
+    }
+    public function shouldAddUnreadClass()
+    {
+        if(user()->id === $this->from_user_id){
+            return false;
+        }
+        return $this->unRead();
+    }
 }
