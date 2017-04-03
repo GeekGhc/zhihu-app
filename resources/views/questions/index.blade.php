@@ -25,7 +25,7 @@
                     <div class="feed-item">
                         <div class="feed-item-inner">
                             <div class="feed-avatar">
-                                <a href=""><img src="/images/avatars/elyse.png" alt=""></a>
+                                <a href=""><img src="{{$question->user->avatar}}" alt=""></a>
                             </div>
                             <div class="feed-main">
                                 <div class="feed-content">

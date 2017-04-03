@@ -43,3 +43,6 @@ Route::post('inbox/{dialogId}/store','InboxController@store');//私信回复
 
 Route::get("/avatar",'UsersController@avatar');//用户头像
 Route::post("/avatar",'UsersController@changeAvatar');//修改用户头像
+
+Route::get("/password",'PasswordController@password');//修改密码
+Route::post("/password/update",'PasswordController@update');//用户修改密码

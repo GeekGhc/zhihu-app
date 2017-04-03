@@ -76,10 +76,7 @@
                                     <a href="/avatar">修改头像</a>
                                 </li>
                                 <li>
-                                    <a href="#">修改密码</a>
-                                </li>
-                                <li>
-                                    <a href="#">忘记密码</a>
+                                    <a href="/password">修改密码</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
