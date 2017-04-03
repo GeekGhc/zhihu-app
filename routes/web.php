@@ -40,4 +40,5 @@ Route::get('inbox','InboxController@index');
 Route::get('inbox/{dialogId}','InboxController@show');//私信消息详情
 Route::post('inbox/{dialogId}/store','InboxController@store');//私信回复
 
-Route::get("/avatar",'UsersController@avatar');
+
+Route::get("/avatar",'UsersController@avatar');//用户头像
