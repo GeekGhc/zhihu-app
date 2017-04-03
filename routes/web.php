@@ -46,3 +46,6 @@ Route::post("/avatar",'UsersController@changeAvatar');//修改用户头像
 
 Route::get("/password",'PasswordController@password');//修改密码
 Route::post("/password/update",'PasswordController@update');//用户修改密码
+
+Route::get("/setting",'SettingController@index');//用户设置面板
+Route::post("/setting",'SettingController@store');//用户设置保存

@@ -70,13 +70,13 @@
                                     <a href="#">我的帖子</a>
                                 </li>
                                 <li>
-                                    <a href="#">我的回答</a>
-                                </li>
-                                <li>
                                     <a href="/avatar">修改头像</a>
                                 </li>
                                 <li>
                                     <a href="/password">修改密码</a>
+                                </li>
+                                <li>
+                                    <a href="/setting">个人设置</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
