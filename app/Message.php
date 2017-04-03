@@ -50,4 +50,10 @@ class Message extends Model
         }
         return $this->unRead();
     }
+
+    //私信未读消息个数
+    public function unReadCount()
+    {
+       return  Message::where('dialog_id',$this->dialog_id)->where('has_read','F')->count();
+    }
 }

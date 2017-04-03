@@ -8,7 +8,12 @@
     color: #00989a;
     font-weight: bold;
 }
-
+.nav-message-tabs{
+    margin-bottom: 12px;
+}
+.tab-pane .media.unread{
+    background: #fff9ea;
+}
 .tab-pane .media,.message-list .media{
     padding: 14px 14px;
     border-bottom: 1px solid #eee;

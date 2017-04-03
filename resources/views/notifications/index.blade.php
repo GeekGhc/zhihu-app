@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs nav-message-tabs" role="tablist">
                     <li role="presentation" class="active">
                         <a href="#commonMsg" aria-controls="commonMsg" role="tab" data-toggle="tab">消息通知</a>
                     </li>
@@ -47,10 +47,14 @@
                                                 {{ $message->toUser->name }}
                                             @endif
                                         </a>
+                                        @if($message->shouldAddUnreadClass())
+                                        <div class="ui red label pull-right">{{$message->unReadCount()}}</div>
+                                        @endif
                                     </h4>
                                     <p><a href="/inbox/{{$message->dialog_id}}">
                                             {{ $message->body }}
-                                        </a></p>
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         @endforeach
