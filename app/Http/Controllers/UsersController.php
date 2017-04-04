@@ -31,6 +31,6 @@ class UsersController extends Controller
     //用户的个人主页
     public function profile($userName)
     {
-
+        return view('users.profile');
     }
 }

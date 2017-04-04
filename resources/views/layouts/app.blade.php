@@ -72,10 +72,10 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="#"><i class="fa fa-cloud fa-icon-lg"></i>我的帖子</a>
+                                    <a href="/people/{{Auth::user()->name}}"><i class="fa fa-user fa-icon-lg"></i>我的主页</a>
                                 </li>
                                 <li>
-                                    <a href="/avatar"><i class="fa fa-user fa-icon-lg"></i>修改头像</a>
+                                    <a href="/avatar"><i class="fa fa-cloud fa-icon-lg"></i>修改头像</a>
                                 </li>
                                 <li>
                                     <a href="/password"><i class="fa fa-cog fa-icon-lg"></i>修改密码</a>
