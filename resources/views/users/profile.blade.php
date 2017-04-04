@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="list-item">
                                     <div class="col-md-1">
-                                        <span>3回答</span>
+                                        <span class="ui label yellow">3 回答</span>
                                     </div>
                                     <div class="col-md-9">
                                         <a href="#">laravel blade中如何解析vueJs的值</a>
