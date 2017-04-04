@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/question.css">
     <link rel="stylesheet" href="/css/notify.css">
+    <link rel="stylesheet" href="/css/profile.css">
     @yield("header-css")
 
 <!-- Scripts -->

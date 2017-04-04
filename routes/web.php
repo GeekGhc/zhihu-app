@@ -49,3 +49,5 @@ Route::post("/password/update",'PasswordController@update');//用户修改密码
 
 Route::get("/setting",'SettingController@index');//用户设置面板
 Route::post("/setting",'SettingController@store');//用户设置保存
+
+Route::get("/people/{userName}",'UsersController@profile');//用户的个人主页

@@ -27,4 +27,10 @@ class UsersController extends Controller
 
         return ['url'=>user()->avatar];
     }
+
+    //用户的个人主页
+    public function profile($userName)
+    {
+
+    }
 }
