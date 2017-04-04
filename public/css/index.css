@@ -40,3 +40,8 @@ body{
     height: 38px;
     border-radius: 50%;
 }
+
+.bell-badge{
+    background-color: #DB2828!important;
+    border-color: #DB2828!important;
+}

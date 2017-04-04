@@ -35,6 +35,7 @@ Route::get('/questions/{questionId}/follow','QuestionFollowController@follow');/
 
 Route::get('messages','NotificationsController@index');//用户的站内信通知
 Route::get('message/{message}','NotificationsController@show');//用户的站内信通知
+Route::get('messages/read','NotificationsController@read');//标记消息为已读
 
 Route::get('inbox','InboxController@index');
 Route::get('inbox/{dialogId}','InboxController@show');//私信消息详情

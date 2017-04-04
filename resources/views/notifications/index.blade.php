@@ -17,6 +17,7 @@
                     <li role="presentation">
                         <a href="#privateMsg" aria-controls="privateMsg" role="tab" data-toggle="tab">私信列表</a>
                     </li>
+                    <a href="/messages/read" class="ui button teal pull-right">全部标记为已读</a>
                 </ul>
 
                 <!-- Tab panes -->

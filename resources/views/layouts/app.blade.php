@@ -58,7 +58,14 @@
                         <li><a href="{{ url('/login') }}">登 录</a></li>
                         <li><a href="{{ url('/register') }}">注 册</a></li>
                     @else
-                        <li><a href="{{url('/messages')}}" class="user-notify-bell"><i class="fa fa-bell"></i></a></li>
+                        <li>
+                            <a href="{{url('/messages')}}" class="user-notify-bell">
+                                <i class="fa fa-bell"></i>
+                                @if(Auth::user()->unreadNotifications->count()!==0)
+                                    <span class="badge bell-badge">{{\Auth::user()->unreadNotifications->count()}}</span>
+                                @endif
+                            </a>
+                        </li>
 
                         <li>
                             <a href="#">

@@ -32,4 +32,11 @@ class NotificationsController extends Controller
         $message->markAsRead();
         return redirect(Request::query('redirect_url'));
     }
+
+    //标记全部消息为已读
+    public function read()
+    {
+        Auth::user()->unreadNotifications->markAsRead();
+        return redirect('/messages');
+    }
 }
