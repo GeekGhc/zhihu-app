@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAnswerRequest;
+use App\Notifications\AnswerQuestionNotification;
 use App\Repositories\AnswerRepository;
 use Illuminate\Http\Request;
 use Auth;
@@ -32,6 +33,8 @@ class AnswersController extends Controller
         ]);
         $answer->question()->increment('answers_count');
         Auth::user()->increment('answers_count');
+        $data = ['name'=>Auth::user()->name,'question'=>$answer->question];
+        $answer->question->user->notify(new AnswerQuestionNotification($data));
         return back();
     }
 }

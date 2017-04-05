@@ -90,6 +90,7 @@ class QuestionsController extends Controller
 
         if(Auth::user()->owns($question)){
             $question->delete();
+            Auth::user()->decrement('questions_count');
             return redirect('/');
         }
         abort(403,'Forbidden');

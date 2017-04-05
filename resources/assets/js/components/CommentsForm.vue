@@ -92,7 +92,7 @@
                 return '#'+this.dialog;
             },
             text(){
-                return '<i class="fa fa-comment fa-icon-lg"></i>'+this.total+'条评论';
+                return '<i class="fa fa-comment fa-icon-lg"></i>'+this.count+'条评论';
             },
             total(){
                 return this.count
@@ -111,7 +111,7 @@
                     }
                     this.comments.push(comment)
                     this.body = ''
-                    this.total++;
+                    this.count++;
                 })
             },
             getComments(){
