@@ -83,7 +83,7 @@
                                         <img src="{{\Auth::user()->avatar}}">
                                     </div>
                                     <h4 class="media-heading answer-item-name">
-                                        <a href="/questions/{{$answer->user->name}}">
+                                        <a href="/people/{{$answer->user->name}}">
                                             {{$answer->user->name}}
                                         </a>
                                     </h4>
@@ -140,7 +140,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">
-                                    <a href="">
+                                    <a href="/people/{{$question->user->name}}">
                                         {{$question->user->name}}
                                     </a>
                                 </h4>

@@ -11,7 +11,7 @@
 <script>
     export default{
         props:['question'],
-         mounted() {
+        mounted() {
             this.$http.post('/api/question/isLike',{'question':this.question}).then(response => {
                 this.liked = response.data.liked;
             })

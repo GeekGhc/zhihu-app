@@ -11,7 +11,7 @@
                     <div class="feed-item">
                         <div class="feed-item-inner">
                             <div class="feed-avatar">
-                                <a href=""><img src="{{$question->user->avatar}}" alt=""></a>
+                                <a href="/people/{{$question->user->name}}"><img src="{{$question->user->avatar}}" alt=""></a>
                             </div>
                             <div class="feed-main">
                                 <div class="feed-content">
