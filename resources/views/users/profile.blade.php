@@ -31,7 +31,8 @@
                                                 <i class="fa fa-github"></i>{{$user->setting['github']}}
                                             </div>
                                             <div class="ProfileHeader-infoItem">
-                                                <i class="fa fa-link"></i><a href="{{$user->setting['site']}}" target="_blank">{{$user->setting['site']}}</a>
+                                                <i class="fa fa-link"></i><a href="{{$user->setting['site']}}"
+                                                                             target="_blank">{{$user->setting['site']}}</a>
                                             </div>
                                             <div class="ProfileHeader-infoItem">
                                                 <i class="fa fa-cloud"></i>{{$user->setting['bio']}}
@@ -39,12 +40,12 @@
                                         </div>
                                     </div>
                                     @if(Auth::id()===$user->id)
-                                    <a href="/setting" class="ui button inverted blue pull-right">编辑个人资料</a>
+                                        <a href="/setting" class="ui button inverted blue pull-right">编辑个人资料</a>
                                     @else
-                                    <div class="profile-action-buttons">
-                                        <user-follow-button user="{{$user->id}}"></user-follow-button>
-                                        <send-message user="{{$user->id}}"></send-message>
-                                    </div>
+                                        <div class="col-md-3 pull-right">
+                                            <user-follow-button user="{{$user->id}}"></user-follow-button>
+                                            <send-message user="{{$user->id}}"></send-message>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -52,10 +53,10 @@
                     </div>
                 </div>
                 <div class="profile-main">
-                        <div class="profileMain">
-                            @yield('profile-content')
-                        </div>
+                    <div class="profileMain">
+                        @yield('profile-content')
                     </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="action-button">
     <button class="btn btn-default user-follow"
             v-bind:class="{'btn-success':followed}"
             v-text="text"

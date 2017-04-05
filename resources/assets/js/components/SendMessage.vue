@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="action-button">
         <button class="btn btn-default pull-right"
                 style="margin-top: -36px;"
                 @click="showSendMessageForm"
