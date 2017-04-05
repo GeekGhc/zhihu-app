@@ -33,9 +33,9 @@
                             </div>
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body">描述</label>
-                                <script id="container" name="body" type="text/plain" style="height:200px;">
+                                <div id="container" name="body" type="text/plain" style="height:200px;">
                                     {!! $question->body !!}
-                                </script>
+                                </div>
                                 @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>

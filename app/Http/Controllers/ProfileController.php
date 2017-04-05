@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -9,7 +10,9 @@ class ProfileController extends Controller
     //用户的个人主页
     public function index($userName)
     {
-        return view('profile.questions');
+        $user = User::where('name',$userName)->first();
+        $questions = $user->questions;
+        return view('profile.questions',compact(['user','questions']));
     }
 
     //用户的回答
