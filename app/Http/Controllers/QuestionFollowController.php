@@ -47,5 +47,6 @@ class QuestionFollowController extends Controller
         }
         $question->increment('followers_count');
         return response()->json(['followed' => true]);
+
     }
 }

@@ -28,7 +28,9 @@ class ProfileController extends Controller
     //用户的收藏
     public function like($userName)
     {
-        return view('profile.like');
+        $user = User::where('name',$userName)->first();
+        $questions = $user->likes;
+        return view('profile.like',compact(['user','questions']));
     }
 
     //用户关注的人

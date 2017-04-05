@@ -106,6 +106,22 @@ class User extends Authenticatable
         return !! $this->votes()->where('answer_id',$answer)->count();
     }
 
+    //用户收藏问题多对多的关系
+    public function likes()
+    {
+        return $this->belongsToMany(Question::class,'likes')->withTimestamps();
+    }
+    //用户收藏一个问题
+    public function likeThis($question)
+    {
+        return $this->likes()->toggle($question);
+    }
+    //用户是否收藏了这个问题
+    public function hasLikedThis($question)
+    {
+        return $this->likes()->where('question_id',$question)->count();
+    }
+
     //用户的私信
     public function messages()
     {
