@@ -48,7 +48,6 @@ class InboxController extends Controller
             'body'=>request('body'),
             'dialog_id'=>$dialogId
         ]);
-
         //回复私信的消息通知
         $newMessage->toUser->notify(new NewMessageNotification($newMessage));
         return back();

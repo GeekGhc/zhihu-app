@@ -54,6 +54,7 @@
                     this.body = '';
                     setTimeout(function () {
                         $('#modal-send-message').modal('hide');
+                        this.status = false
                     },2000);
                 })
             },

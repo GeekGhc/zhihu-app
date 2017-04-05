@@ -1,3 +1,3 @@
 <li class="notifications {{ $notification->unread() ? 'unread' : '' }}">
-    <a href="/message/{{$notification->id}}?redirect_url=/inbox/"><span>{{$notification->data['name']}}</span> 关注了你</a>
+    <a href="#"><span>{{$notification->data['name']}}</span></a> 关注了你
 </li>

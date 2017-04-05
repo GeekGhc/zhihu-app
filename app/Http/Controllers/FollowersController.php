@@ -45,7 +45,6 @@ class FollowersController extends Controller
         }
 
         $userToFollow->decrement('followers_count');
-
         return response()->json(['followed' => false]);
     }
 }

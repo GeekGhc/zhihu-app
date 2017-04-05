@@ -6,6 +6,7 @@ use Auth;
 use App\Repositories\MessageRepository;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\DatabaseNotification;
+use App\Notifications\NewMessageNotification;
 
 class MessagesController extends Controller
 {
@@ -27,6 +28,7 @@ class MessagesController extends Controller
             'body'=>request('body'),
             'dialog_id'=> $fromUserId.$toUserId,
         ]);
+        $message->toUser->notify(new NewMessageNotification($message));
 
         //成功创建数据
         if($message){

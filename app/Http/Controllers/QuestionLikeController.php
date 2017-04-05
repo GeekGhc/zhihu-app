@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\LikeQuestionNotification;
 use App\Repositories\QuestionRepository;
 use Illuminate\Http\Request;
 use Auth;
@@ -40,6 +41,7 @@ class QuestionLikeController extends Controller
             return response()->json(['liked' => false]);
         }
         Auth::user()->increment('likes_count');
+        $question->user->notify(new LikeQuestionNotification($question));
         return response()->json(['liked' => true]);
 
     }
