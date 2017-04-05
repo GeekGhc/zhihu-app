@@ -24,19 +24,18 @@
 
 ### 问题
 - [x] 问题列表
-- [x] 收藏问题
+- [x] 收藏问题(消息通知)
 - [x] 分享问题到第三方
-- [x] 问题答案评论消息通知
-- [x] 问题评论,答案评论
+- [x] 问题答案评论(消息通知)
+- [x] 问题评论,答案评论(消息通知)
 - [x] 答案点赞
 - [x] 发布问题
 - [x] 修改问题(仅限问题的作者)
 - [x] 删除问题(仅限问题的作者)
 
 ## 效果预览
-![1](public/screenshot/1.png)
-![1](public/screenshot/2.png)
-![1](public/screenshot/6.png)
-![1](public/screenshot/5.png)
-![1](public/screenshot/3.png)
-![1](public/screenshot/4.png)
+![7](public/screenshot/7.png)
+![2](public/screenshot/2.png)
+![6](public/screenshot/6.png)
+![5](public/screenshot/5.png)
+![3](public/screenshot/3.png)
