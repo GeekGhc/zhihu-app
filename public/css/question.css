@@ -164,6 +164,12 @@ a.topic{
     text-align: center;
     color: #aaa;
 }
+.question-like{
+    cursor: pointer;
+}
+.question-like.active{
+    color: #F2711C;
+}
 /***************** index *********************/
 .feed-list{
 

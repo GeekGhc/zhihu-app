@@ -29,7 +29,7 @@
                                     <i class="fa fa-paper-plane fa-icon-sm"></i>
                                     分享
                                 </div>
-                                <div class="answer-item-action">
+                                <div class="answer-item-action question-like">
                                     <i class="fa fa-star fa-icon-sm"></i>
                                     收藏
                                 </div>
@@ -110,10 +110,6 @@
                                     <div class="answer-item-action">
                                         <i class="fa fa-paper-plane fa-icon-sm"></i>
                                         分享
-                                    </div>
-                                    <div class="answer-item-action">
-                                        <i class="fa fa-star fa-icon-sm"></i>
-                                        收藏
                                     </div>
                                     <div class="answer-item-action">
                                         <i class="fa fa-ellipsis-h"></i>
