@@ -31,6 +31,7 @@ class AnswersController extends Controller
             'body'=>$request->get('body')
         ]);
         $answer->question()->increment('answers_count');
+        Auth::user()->increment('answers_count');
         return back();
     }
 }

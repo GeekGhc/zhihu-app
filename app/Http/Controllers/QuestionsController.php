@@ -45,6 +45,7 @@ class QuestionsController extends Controller
             'user_id' => Auth::id(),
         ];
         $question = $this->questionRepository->create($data);
+        Auth::user()->increment('questions_count');
         $question->topics()->attach($topics);
         return redirect()->route('questions.show', [$question->id]);
     }

@@ -10,15 +10,15 @@ use Illuminate\Notifications\Messages\MailMessage;
 class QuestionCommentNotification extends Notification
 {
     use Queueable;
-    public $question;
+    public $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -40,7 +40,11 @@ class QuestionCommentNotification extends Notification
      */
     public function toDatabase($notifiable)
     {
-
+        return [
+            'name'=>$this->data['name'],
+            'title'=>$this->data['question']->title,
+            'id'=>$this->data['question']->id
+        ];
     }
 
     /**

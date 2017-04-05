@@ -11,10 +11,10 @@ class AnswerReplyNotification extends Notification
 {
     use Queueable;
 
-    public $question;
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-
+        $this->data = $data;
     }
 
     /**
@@ -36,7 +36,11 @@ class AnswerReplyNotification extends Notification
      */
     public function toDatabase($notifiable)
     {
-
+        return [
+            'name'=>$this->data['name'],
+            'title'=>$this->data['question']->title,
+            'id'=>$this->data['question']->id
+        ];
     }
 
     /**

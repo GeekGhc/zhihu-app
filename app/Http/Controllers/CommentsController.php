@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\AnswerReplyNotification;
+use App\Notifications\QuestionCommentNotification;
 use App\Repositories\AnswerRepository;
 use App\Repositories\CommentRepository;
 use App\Repositories\QuestionRepository;
@@ -56,11 +58,23 @@ class CommentsController extends Controller
     //用户评论
     public function store()
     {
+        $data = [
+            'name'=>user('api')->name,
+            'question'=>null
+        ];
         $model = $this->getModelNameFromType(request('type'));
         if(request('type')==='question'){
             $this->question->addCommentsCount(request('model'));
+            $question = $this->question->byId(request('model'));
+            $data['question']=$question;
+            $question->user->notify(new QuestionCommentNotification($data));
+        }else{
+            $question = $this->answer->byId(request('model'))->question;
+            $data['question']=$question;
+            $question->user->notify(new AnswerReplyNotification($data));
         }
         $this->answer->addCommentsCount(request('model'));
+        user('api')->increment('comments_count');
         return  $this->comment->create([
             'commentable_id'=>request('model'),
             'commentable_type'=>$model,
