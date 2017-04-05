@@ -53,8 +53,8 @@
                     this.status = response.data.status;
                     this.body = '';
                     setTimeout(function () {
-                        $('#modal-send-message').modal('hide');
                         this.status = false
+                        $('#modal-send-message').modal('hide');
                     },2000);
                 })
             },

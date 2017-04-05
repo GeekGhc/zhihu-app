@@ -41,10 +41,12 @@ class FollowersController extends Controller
         if(count($followed['attached'])>0){
             $userToFollow->notify(new NewUserFollowNotification());
             $userToFollow->increment('followers_count');
+            Auth::user()->increment('followings_count');
             return response()->json(['followed' => true]);
         }
 
         $userToFollow->decrement('followers_count');
+        Auth::user()->decrement('followings_count');
         return response()->json(['followed' => false]);
     }
 }

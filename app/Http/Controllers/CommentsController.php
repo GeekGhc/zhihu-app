@@ -71,7 +71,8 @@ class CommentsController extends Controller
         }else{
             $question = $this->answer->byId(request('model'))->question;
             $data['question']=$question;
-            $question->user->notify(new AnswerReplyNotification($data));
+            $answer = $this->answer->byId(request('model'));
+            $answer->user->notify(new AnswerReplyNotification($data));
         }
         $this->answer->addCommentsCount(request('model'));
         user('api')->increment('comments_count');

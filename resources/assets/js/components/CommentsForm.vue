@@ -26,8 +26,10 @@
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">{{comment.user.name}}</h4>
-                                    <span class="media-comment-time">2017-07-02</span>
+                                    <div>
+                                        <span class="media-heading">{{comment.user.name}}</span>
+                                        <span class="media-comment-time pull-right">{{comment.created_at}}</span>
+                                    </div>
                                     {{comment.body}}
                                 </div>
                             </div>
@@ -55,6 +57,7 @@
     }
     .media-body .media-heading{
         color:#00b1b3;
+        font-weight:600;
     }
     .modal-body{
         padding-top:0 !important;
@@ -103,7 +106,8 @@
                             name:Zhihu.name,
                             avatar:Zhihu.avatar
                         },
-                        body: response.data.body
+                        body: response.data.body,
+                        created_at:response.data.created_at
                     }
                     this.comments.push(comment)
                     this.body = ''

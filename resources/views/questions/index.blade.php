@@ -6,20 +6,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <h4 class="ui dividing header"> <i class="fa fa-list fa-icon-lg"></i>最新动态</h4>
 
-                {{--@foreach($questions as $question)
-                    <div class="media">
-                        <div class="media-left">
-                            <a>
-                                <img width="48" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                <a href="/questions/{{$question->id}}">{{$question->title}}</a>
-                            </h4>
-                        </div>
-                    </div>
-                @endforeach--}}
                 @foreach($questions as $question)
                 <div class="feed-list">
                     <div class="feed-item">
@@ -41,7 +27,7 @@
                                 </div>
                                 <div class="feed-meta">
                                     <div class="feed-meta-panel">
-                                        <a href="#" class="meta-item"><i class="fa fa-comment fa-icon-sm"></i>{{$question->comments_count}}条评论</a>
+                                        <a href="#" class="meta-item"><i class="fa fa-comment fa-icon-sm"></i>{{$question->answers_count}}条回答</a>
                                         <a href="#" class="meta-item"><i class="fa fa-star fa-icon-sm"></i>{{$question->followers_count}}人关注</a>
                                     </div>
                                 </div>
