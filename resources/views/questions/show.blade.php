@@ -168,8 +168,12 @@
 
                             </div>
                         </div>
+                        @if(Auth::check())
+                            @if(Auth::id()!==$question->user->id)
                         <user-follow-button user="{{$question->user->id}}"></user-follow-button>
                         <send-message user="{{$question->user->id}}"></send-message>
+                            @endif
+                        @endif
                     </div>
                 </div>
             </div>
