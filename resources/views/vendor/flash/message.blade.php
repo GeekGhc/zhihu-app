@@ -9,6 +9,7 @@
         <div class="alert
                     alert-{{ session('flash_notification.level') }}
                     {{ session()->has('flash_notification.important') ? 'alert-important' : '' }}"
+             style="text-align: center"
         >
             @if(session()->has('flash_notification.important'))
                 <button type="button"

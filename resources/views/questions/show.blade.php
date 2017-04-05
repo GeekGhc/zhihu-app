@@ -29,7 +29,13 @@
                                     <i class="fa fa-paper-plane fa-icon-sm"></i>
                                     分享
                                 </div>
-                                <question-like question="{{$question->id}}"></question-like>
+                                    @if(Auth::check())
+                                        <question-like question="{{$question->id}}"></question-like>
+                                    @else
+                                        <a class="answer-item-action question-like" href="/login">
+                                            <i class="fa fa-star fa-icon-sm"></i>收藏
+                                        </a>
+                                    @endif
                                 <div class="answer-item-action">
                                     <i class="fa fa-ellipsis-h"></i>
                                 </div>
@@ -49,6 +55,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
+                        @if(Auth::check())
                             <div class="about-question">
                                 <h2>{{ $question->followers_count }}</h2>
                                 <span>关注者</span>
@@ -59,6 +66,7 @@
                                     撰写答案
                                 </a>
                             </div>
+                        @endif
                     </div>
                 </div>
             </div>

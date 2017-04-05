@@ -11,12 +11,12 @@ use Illuminate\Notifications\Messages\MailMessage;
 class LikeQuestionNotification extends Notification
 {
     use Queueable;
-    public $question;
+    public $data;
 
 
-    public function __construct(Question $question)
+    public function __construct($data)
     {
-        $this->question = $question;
+        $this->data = $data;
     }
 
     /**
@@ -39,9 +39,9 @@ class LikeQuestionNotification extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'name'=>$this->question->user->name,
-            'title'=>$this->question->title,
-            'id'=>$this->question->id
+            'name'=>$this->data['name'],
+            'title'=>$this->data['question']->title,
+            'id'=>$this->data['question']->id
         ];
     }
 

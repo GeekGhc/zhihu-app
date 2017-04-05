@@ -34,4 +34,9 @@
 - [x] 删除问题(仅限问题的作者)
 
 ## 效果预览
-![1](public/screenshot/1.gif)
+![1](public/screenshot/1.png)
+![1](public/screenshot/2.png)
+![1](public/screenshot/6.png)
+![1](public/screenshot/5.png)
+![1](public/screenshot/3.png)
+![1](public/screenshot/4.png)

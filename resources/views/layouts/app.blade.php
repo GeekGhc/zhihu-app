@@ -55,8 +55,8 @@
                     <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon-lg"></i>写问题</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">登 录</a></li>
-                        <li><a href="{{ url('/register') }}">注 册</a></li>
+                        <li><a class="nav-li-login" href="{{ url('/login') }}">登 录</a></li>
+                        <li><a class="nav-li-login" href="{{ url('/register') }}">注 册</a></li>
                     @else
                         <li>
                             <a href="{{url('/messages')}}" class="user-notify-bell">

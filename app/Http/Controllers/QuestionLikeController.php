@@ -37,11 +37,12 @@ class QuestionLikeController extends Controller
         $liked = $user->likeThis($question->id);
 
         if(count($liked['detached'])>0){//如果是取消收藏
-            Auth::user()->decrement('likes_count');
+            user('api')->decrement('likes_count');
             return response()->json(['liked' => false]);
         }
-        Auth::user()->increment('likes_count');
-        $question->user->notify(new LikeQuestionNotification($question));
+        user('api')->increment('likes_count');
+        $data = ['name'=>Auth::user()->name,'question'=>$question];
+        $question->user->notify(new LikeQuestionNotification($data));
         return response()->json(['liked' => true]);
 
     }

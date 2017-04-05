@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //用户设置的面板
     public function index()
     {
