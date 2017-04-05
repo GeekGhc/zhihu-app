@@ -40,13 +40,17 @@
                                     </div>
                                     @if(Auth::id()===$user->id)
                                     <a href="/setting" class="ui button inverted blue pull-right">编辑个人资料</a>
+                                    @else
+                                    <div class="profile-action-buttons">
+                                        <user-follow-button user="{{$user->id}}"></user-follow-button>
+                                        <send-message user="{{$user->id}}"></send-message>
+                                    </div>
                                     @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="profile-main">
                         <div class="profileMain">
                             @yield('profile-content')

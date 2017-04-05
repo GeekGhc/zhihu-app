@@ -79,7 +79,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="/people/{{Auth::user()->name}}"><i class="fa fa-user fa-icon-lg"></i>我的主页</a>
+                                    <a href="/people/{{Auth::user()->name}}"><i class="fa fa-user fa-icon-lg"></i> 我的主页</a>
                                 </li>
                                 <li>
                                     <a href="/avatar"><i class="fa fa-cloud fa-icon-lg"></i>修改头像</a>

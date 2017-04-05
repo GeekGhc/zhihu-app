@@ -1,10 +1,12 @@
 <template>
-    <button class="btn btn-default"
+    <div>
+    <button class="btn btn-default user-follow"
             v-bind:class="{'btn-success':followed}"
             v-text="text"
             v-on:click="follow"
     >
     </button>
+    </div>
 </template>
 
 <script>

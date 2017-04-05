@@ -2,11 +2,11 @@
 @section('profile-content')
     <div class="profileMain-header">
         <ul class="profileMain-tabs">
-            <li class="item"><a class="active" href="#">问题</a></li>
-            <li class="item"><a href="#">回答</a></li>
-            <li class="item"><a href="#">收藏</a></li>
-            <li class="item"><a href="#">关注的人</a></li>
-            <li class="item"><a href="#">我的粉丝</a></li>
+            <li class="item"><a class="active" href="{{route('questions',['userName'=>$user->name])}}">问题</a></li>
+            <li class="item"><a href="{{route('answers',['userName'=>$user->name])}}">回答</a></li>
+            <li class="item"><a href="{{route('like',['userName'=>$user->name])}}">收藏</a></li>
+            <li class="item"><a href="{{route('following',['userName'=>$user->name])}}">关注的人</a></li>
+            <li class="item"><a href="{{route('followers',['userName'=>$user->name])}}">我的粉丝</a></li>
         </ul>
     </div>
     <div class="profileMain-content">
@@ -27,6 +27,5 @@
                 </div>
             </div>
         @endforeach
-
     </div>
 @endsection

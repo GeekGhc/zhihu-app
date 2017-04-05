@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('vendor.ueditor.assets')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -33,9 +32,9 @@
                             </div>
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body">描述</label>
-                                <div id="container" name="body" type="text/plain" style="height:200px;">
+                                <script id="container" name="body" type="text/plain" style="height:200px;">
                                     {!! $question->body !!}
-                                </div>
+                                </script>
                                 @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>

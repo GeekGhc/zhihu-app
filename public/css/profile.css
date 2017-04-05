@@ -142,3 +142,32 @@
     margin-top: 0;
     display: flex;
 }
+.profile-action-buttons{
+    float: right;
+}
+.profile-action-buttons .user-follow{
+    margin-top: -28px !important;
+}
+.profile-action-buttons div{
+    display: inline-block;
+}
+.list-item img{
+    width: 36px;
+    height: 36px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.list-item .name{
+    font-weight: 700;
+    color: #00b1b3;
+    font-size: 16px;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 36px;
+}
+.list-item .meta-info{
+    line-height: 36px;
+    color: #999;
+    font-size: 16px;
+}
