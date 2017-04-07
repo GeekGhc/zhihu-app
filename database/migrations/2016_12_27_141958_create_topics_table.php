@@ -17,7 +17,7 @@ class CreateTopicsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('bio')->nullable();
-            $table->integer('questions_count')->default(0);
+            $table->integer('questions_count')->default(1);
             $table->integer('followers_count')->default(0);
             $table->timestamps();
         });

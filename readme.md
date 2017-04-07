@@ -39,3 +39,21 @@
 ![6](public/screenshot/6.png)
 ![5](public/screenshot/5.png)
 ![3](public/screenshot/3.png)
+
+## 安装
+### 1.克隆源码到本地
+> git clone https://github.com/GeekGhc/zhihu-app
+
+### 2.进入项目目录
+> cd zhihu-app
+
+### 3. 拷贝`.env`文件
+一些 `secret key` 改成自己服务的`key`即可
+> cp .env.example .env
+
+### 4. 下载相关的依赖包(也可以使用yarn)
+下载`laravel`相关依赖的包
+> composer install
+
+### 5. 创建数据
+> php artisan zhihu:install
