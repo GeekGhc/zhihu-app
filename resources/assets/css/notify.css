@@ -1,0 +1,32 @@
+.notifications{
+    padding: 14px 14px;
+    list-style: none;
+    font-size: 16px;
+    border-bottom: 1px solid #eee ;
+}
+.notifications>a>span{
+    color: #00989a;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.nav-message-tabs{
+    margin-bottom: 12px;
+}
+.tab-pane .media.unread{
+    background: #fff9ea;
+}
+.tab-pane .media,.message-list .media{
+    padding: 14px 14px;
+    border-bottom: 1px solid #eee;
+    margin-top:0 !important;
+}
+.tab-pane .media .media-body>p>a{
+    color:#262626;
+}
+.tab-pane .media .media-body .media-heading a{
+    color: #00989a;
+    font-weight: bold;
+}
+.tab-pane .notifications.unread{
+    background: #fff9ea;
+}

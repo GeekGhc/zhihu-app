@@ -1,0 +1,57 @@
+body{
+    background: #f5f5f1 !important;
+}
+.navbar-inverse{
+    background: #222831 !important;
+}
+.navbar-nav > li > .ask-question {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.navbar-nav.navbar-right .ask-question{
+    padding-top: 8px;
+    margin-right: 3rem;
+}
+.fa-icon-sm{
+    margin-right: 4px;
+}
+.fa-icon-lg{
+    margin-right: 6px;
+}
+.navbar-header a{
+    font-size: 26px;
+    font-weight: bolder;
+    color: #00adb5 !important;
+}
+.navbar-nav .nav-link-title{
+    font-size: 18px;
+    color: #fff !important;
+    font-weight: 700;
+    cursor: pointer;
+}
+.dropdown>a{
+    font-size: 16px;
+}
+.user-notify-bell{
+    font-size: 18px;
+}
+.nav-header-avatar img{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.bell-badge{
+    background-color: #DB2828!important;
+    border-color: #DB2828!important;
+}
+@font-face {
+    /*font-family: Monoisome-Regular;*/
+    /*src: url('../fonts/Monoisome-Regular.ttf');*/
+    font-family: Monoid-Italic;
+    src: url('../fonts/Monoid-Italic.ttf');
+}
+.nav-li-login{
+    font-size: 16px;
+    font-family: Monoid-Italic;
+}

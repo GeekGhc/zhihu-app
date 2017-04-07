@@ -10,12 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{elixir('/css/app.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="/css/source/semantic.min.css">
-    <link rel="stylesheet" href="/css/source/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/question.css">
-    <link rel="stylesheet" href="/css/notify.css">
-    <link rel="stylesheet" href="/css/profile.css">
     @yield("header-css")
 
 <!-- Scripts -->
