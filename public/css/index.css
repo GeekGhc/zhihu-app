@@ -45,6 +45,13 @@ body{
     background-color: #DB2828!important;
     border-color: #DB2828!important;
 }
+@font-face {
+    /*font-family: Monoisome-Regular;*/
+    /*src: url('../fonts/Monoisome-Regular.ttf');*/
+    font-family: Monoid-Italic;
+    src: url('../fonts/Monoid-Italic.ttf');
+}
 .nav-li-login{
     font-size: 16px;
+    font-family: Monoid-Italic;
 }
