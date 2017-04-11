@@ -18,7 +18,7 @@ class InstallProject extends Command
      *
      * @var string
      */
-    protected $description = 'Install the  project';
+    protected $description = 'Install the project';
 
     /**
      * Create a new command instance.

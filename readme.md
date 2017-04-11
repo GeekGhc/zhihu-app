@@ -1,10 +1,10 @@
 ## Laravel-Zhihu
-基于Laravel5.3 开发
+基于**Laravel5.3** 开发
 
 ## 前言
 基于[laravist](https://www.laravist.com/)社区知乎系列项目
   
-修复了一些bug 增加了几项功能
+修复了一些`bug` 增加了几项功能
 
 ## 功能
 
