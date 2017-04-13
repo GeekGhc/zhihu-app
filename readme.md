@@ -34,11 +34,11 @@
 - [x] 删除问题(仅限问题的作者)
 
 ## 效果预览
-![7](public/screenshot/7.png)
+![1](public/screenshot/7.png)
 ![2](public/screenshot/2.png)
-![6](public/screenshot/6.png)
-![5](public/screenshot/5.png)
-![3](public/screenshot/3.png)
+![3](public/screenshot/6.png)
+![4](public/screenshot/5.png)
+![5](public/screenshot/3.png)
 
 ## 安装
 ### 1.克隆源码到本地
