@@ -9,8 +9,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    <link href="{{elixir('/css/app.css')}}" rel="stylesheet">
+    {{--<link href="{{elixir('/css/app.css')}}" rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{url('css/source/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/source/select2.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/source/semantic.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/source/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/index.css')}}">
+    <link rel="stylesheet" href="{{url('css/question.css')}}">
+    <link rel="stylesheet" href="{{url('css/notify.css')}}">
+    <link rel="stylesheet" href="{{url('css/profile.css')}}">
     @yield("header-css")
+    @show
 
 <!-- Scripts -->
     <script>
@@ -84,6 +94,11 @@
                                 <li>
                                     <a href="/setting"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
                                 </li>
+                                @if(Auth::user()->isAdmin())
+                                <li>
+                                    <a href="/dashboard"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
+                                </li>
+                                @endif
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"

@@ -22,6 +22,7 @@ class CreateAnswersTable extends Migration
             $table->integer('comments_count')->default(0);//答案的回复评论数
             $table->string('is_hidden',8)->default('F');
             $table->string('close_comment',8)->default('F');
+            $table->string('is_first',8)->default('F');
             $table->timestamps();
         });
     }

@@ -182,6 +182,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 

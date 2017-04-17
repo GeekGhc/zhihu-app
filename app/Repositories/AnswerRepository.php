@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-
 use App\Answer;
 
 class AnswerRepository

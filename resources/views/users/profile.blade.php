@@ -8,7 +8,7 @@
                     <div class="profile-card">
                         <div class="userCover-panel">
                             <div class="userCover">
-                                <img class="userCover-img" src="{{url('/images/pattern.png')}}" alt="">
+                                <img class="userCover-img" src="{{url('/images/pattern.jpeg')}}" alt="">
                             </div>
                         </div>
                         <div class="header-wrapper">

@@ -10,4 +10,9 @@ class UserRepository
   {
     return User::find($id);
   }
+
+  public function getUsersCount()
+  {
+      return User::get()->count();
+  }
 }

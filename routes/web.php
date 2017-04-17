@@ -56,3 +56,14 @@ Route::get("/people/{userName}/answers",'ProfileController@answers')->name('answ
 Route::get("/people/{userName}/like",'ProfileController@like')->name('like');//用户的个人主页
 Route::get("/people/{userName}/followers",'ProfileController@followers')->name('followers');//用户的个人主页
 Route::get("/people/{userName}/following",'ProfileController@following')->name('following');//用户的个人主页
+
+
+
+Route::group(['namespace' => 'Admin'], function () {
+    Route::get('/dashboard', 'AdminController@index'); //后台首页
+    Route::get('/admin/profile','AdminController@adminInfo');//管理员资料
+    Route::get('/admin/users','UsersController@index');//系统用户信息
+
+    Route::get('/admin/question/index','QuestionsController@index');//问题列表界面
+    Route::get('/admin/question/create','QuestionsController@create');//创建问题
+});
