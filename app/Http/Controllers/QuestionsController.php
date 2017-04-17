@@ -65,7 +65,6 @@ class QuestionsController extends Controller
         if(Auth::user()->owns($question)){
             return  view('questions.edit',compact('question'));
         }
-
         return back();
     }
 

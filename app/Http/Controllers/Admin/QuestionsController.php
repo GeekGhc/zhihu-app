@@ -59,7 +59,7 @@ class QuestionsController extends Controller
         $question->update([
             'title'=>$request->get('title'),
             'body'=>$request->get('body'),
-//            'is_first'=>$request->get('is_first')
+            'is_first'=>$request->get('is_first')
         ]);
 
         $question->topics()->sync($topics);
