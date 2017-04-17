@@ -182,8 +182,8 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{url('admin/question/index')}}"><i class="fa fa-circle-o"></i>问题</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i>标签</a></li>
                         <li><a href="{{url('admin/comments/index')}}"><i class="fa fa-circle-o"></i>评论</a></li>
+                        <li><a href="{{url('admin/topics/index')}}"><i class="fa fa-circle-o"></i>标签</a></li>
                     </ul>
                 </li>
 

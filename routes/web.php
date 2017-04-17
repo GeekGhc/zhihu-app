@@ -77,4 +77,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::get('/admin/comments/index','CommentsController@index')->name('admin.comments');//评论列表
     Route::delete('/admin/comment/{id}','CommentsController@destroy');//删除评论
+
+    Route::get('/admin/topics/index','TopicsController@index')->name('admin.topics');//标签列表
+    Route::delete('/admin/comment/{id}','TopicsController@destroy');//删除标签
 });

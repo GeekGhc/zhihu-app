@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Naux\Mail\SendCloudTemplate;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RegisterController extends Controller
 {
@@ -64,6 +66,7 @@ class RegisterController extends Controller
             'api_token'=>str_random(60),
             'setting'=> ['city'=>'','site'=>'','github'=>'','bio'=>'']
         ]);
+        $user->assignRole('member');
         $this->sendVerifyEmailTo($user);
         return $user;
     }

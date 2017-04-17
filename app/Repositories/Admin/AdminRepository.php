@@ -32,20 +32,20 @@ class AdminRepository
                     'url' => '/admin/question/index'
                 ],
                 [
-                    'count' => 44,
-                    'title' => '消息',
-                    'sup' => '条',
-                    'icon' => 'ion-film-marker',
-                    'bck' => 'bg-yellow',
-                    'url' => 'admin/series/index'
-                ],
-                [
                     'count' => Comment::all()->count(),
                     'title' => '评论',
                     'sup' => '条',
                     'icon' => 'ion-android-chat',
                     'bck' => 'bg-red',
-                    'url' => 'admin/comment/index'
+                    'url' => 'admin/comments/index'
+                ],
+                [
+                    'count' => Topic::all()->count(),
+                    'title' => '标签',
+                    'sup' => '条',
+                    'icon' => 'ion-pricetags',
+                    'bck' => 'bg-olive',
+                    'url' => 'admin/topics/index'
                 ],
                 [
                     'count' => 44,
@@ -56,12 +56,12 @@ class AdminRepository
                     'url' => 'admin/mail/index'
                 ],
                 [
-                    'count' => Topic::all()->count(),
-                    'title' => '标签',
+                    'count' => 44,
+                    'title' => '消息',
                     'sup' => '条',
-                    'icon' => 'ion-pricetags',
-                    'bck' => 'bg-olive',
-                    'url' => 'admin/tags/index'
+                    'icon' => 'ion-film-marker',
+                    'bck' => 'bg-yellow',
+                    'url' => 'admin/messages/index'
                 ],
                 [
                     'count' => 0,

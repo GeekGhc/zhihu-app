@@ -19,4 +19,9 @@ class TopicRepository
                     ->query('q') . '%')->get();
         return $topics;
     }
+
+    public function getTopicsFeed()
+    {
+        return Topic::all();
+    }
 }
