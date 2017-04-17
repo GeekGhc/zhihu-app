@@ -41,6 +41,9 @@
 ![5](public/screenshot/3.png)
 
 ## 安装
+
+> 前台部分为1.0版本 前后台为2.0版本
+
 ### 1.克隆源码到本地
 > git clone https://github.com/GeekGhc/zhihu-app
 
