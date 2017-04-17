@@ -67,4 +67,6 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/admin/question/index','QuestionsController@index')->name('admin.questions');//问题列表界面
     Route::get('/admin/question/create','QuestionsController@create');//创建问题
     Route::post('/admin/question','QuestionsController@store');//创建问题
+    Route::get('/admin/question/edit/{id}','QuestionsController@edit');//编辑问题页面
+    Route::patch('/admin/question/edit/{id}','QuestionController@update');//编辑问题
 });

@@ -49,7 +49,7 @@
                 @foreach($questions as $question)
                     <tr>
                         <td>
-                            <a style="font-size: 16px" href="#"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <a style="font-size: 16px" href="/admin/question/edit/{{$question->id}}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
                             <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o"
                                                                                    title="删除"></i></a>
                         </td>

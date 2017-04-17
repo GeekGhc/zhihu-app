@@ -42,6 +42,7 @@
 ![5](public/screenshot/3.png)
 ### 后台部分
 ![8](public/screenshot/8.png)
+![9](public/screenshot/9.png)
 
 ## 安装
 

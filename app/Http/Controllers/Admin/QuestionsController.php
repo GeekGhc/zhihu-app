@@ -40,4 +40,24 @@ class QuestionsController extends Controller
         $question->topics()->attach($topics);
         return redirect()->route('admin.questions', [$question->id]);
     }
+
+    //编辑问题页面
+    public function edit($id)
+    {
+        $question = $this->question->byId($id);
+        if(Auth::user()->owns($question)){
+            return view("admin.questions.edit",compact('question'));
+        }
+    }
+
+    //编辑问题
+    public function update(Request $request,$id)
+    {
+
+    }
+
+    public function destroy($id)
+    {
+
+    }
 }
