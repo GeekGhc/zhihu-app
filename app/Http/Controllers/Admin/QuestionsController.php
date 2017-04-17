@@ -59,7 +59,7 @@ class QuestionsController extends Controller
         $question->update([
             'title'=>$request->get('title'),
             'body'=>$request->get('body'),
-            'is_first'=>$request->get('is_first')
+//            'is_first'=>$request->get('is_first')
         ]);
 
         $question->topics()->sync($topics);
@@ -71,7 +71,6 @@ class QuestionsController extends Controller
     {
         $question = $this->question->byId($id);
         $question->delete();
-        $question->decrement('questions_count');
         return redirect()->route('admin.questions');
     }
 }

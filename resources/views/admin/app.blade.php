@@ -82,7 +82,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
-                                <img src="{{url('dist/img/avatar.jpg')}}" class="img-circle" alt="User Image">
+                                <img src="{{$admin->info()->avatar}}" class="img-circle" alt="User Image">
 
                                 <p>
                                     Become A Good Programmer
@@ -183,7 +183,7 @@
                     <ul class="treeview-menu">
                         <li><a href="{{url('admin/question/index')}}"><i class="fa fa-circle-o"></i>问题</a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i>标签</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i>评论</a></li>
+                        <li><a href="{{url('admin/comments/index')}}"><i class="fa fa-circle-o"></i>评论</a></li>
                     </ul>
                 </li>
 

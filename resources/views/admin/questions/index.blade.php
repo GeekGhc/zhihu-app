@@ -2,7 +2,7 @@
 @section('content-header')
     <h1>
         内容管理
-        <small>文章</small>
+        <small>问题</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> 主页</a></li>
@@ -49,13 +49,13 @@
                 @foreach($questions as $question)
                     <tr>
                         <td>
-                            <a style="font-size: 16px" href="/admin/question/edit/{{$question->id}}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
-                            <form action="/admin/question/{{$question->id}}" method="post" class="delete-form action-btn" style="display: inline-block;cursor: pointer">
+                            <a style="font-size: 16px;padding: 4px" href="/admin/question/edit/{{$question->id}}" class="ui button"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <form action="/admin/question/{{$question->id}}" method="POST" class="delete-form action-btn" style="display: inline-block;cursor: pointer">
                                 {{method_field('DELETE')}}
                                 {!! csrf_field() !!}
-                                <a style="font-size: 16px;color: #dd4b39;">
+                                <button style="font-size: 16px;color: #dd4b39;padding: 4px;" class="ui button">
                                     <i class="fa fa-fw fa-trash-o" title="删除"></i>
-                                </a>
+                                </button>
                             </form>
                         </td>
                         <td class="text-muted">{{$question->title}}</td>

@@ -74,4 +74,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/admin/question/edit/{id}','QuestionsController@edit');//编辑问题页面
     Route::patch('/admin/question/{id}','QuestionsController@update');//编辑问题
     Route::delete('/admin/question/{id}','QuestionsController@destroy');//删除问题
+
+    Route::get('/admin/comments/index','CommentsController@index')->name('admin.comments');//评论列表
+    Route::delete('/admin/comment/{id}','CommentsController@destroy');//删除评论
 });
