@@ -23,6 +23,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('answers_count')->default(0);
             $table->string('close_comment',8)->default('F');
             $table->string('is_hidden',8)->default('F');
+            $table->string('is_first',8)->default('F');
             $table->timestamps();
         });
     }

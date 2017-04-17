@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    protected $fillable = ['title', 'body', 'user_id'];
+    protected $fillable = ['title', 'body', 'user_id','is_first'];
 
 
     //设置问题显示

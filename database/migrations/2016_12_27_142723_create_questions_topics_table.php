@@ -17,7 +17,6 @@ class CreateQuestionsTopicsTable extends Migration
             $table->increments('id');
             $table->integer('question_id')->unsigned()->index();
             $table->integer('topic_id')->unsigned()->index();
-            $table->string('is_first',8)->default('F');
             $table->timestamps();
         });
     }

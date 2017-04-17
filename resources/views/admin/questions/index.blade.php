@@ -12,7 +12,8 @@
 @stop
 
 @section('content')
-    <a href="{{url('admin/question/create')}}" class="btn btn-primary margin-bottom"><i class="fa fa-paint-brush" style="margin-right: 6px"></i>撰写新文章</a>
+    <a href="{{url('admin/question/create')}}" class="btn btn-primary margin-bottom"><i class="fa fa-paint-brush"
+                                                                                        style="margin-right: 6px"></i>撰写新文章</a>
     <div class="box box-primary">
         <div class="box-header with-border">
             <h3 class="box-title">问题列表</h3>
@@ -37,7 +38,7 @@
                     <th>操作</th>
                     <th>标题</th>
                     <th>作者</th>
-                    <th>浏览次数</th>
+                    <th>关注人数</th>
                     <th>发布时间</th>
                     <th>更新时间</th>
                 </tr>
@@ -45,29 +46,21 @@
                 <!--tr-th end-->
 
                 <tbody>
-                <tr>
-                    <td>
-                        <a style="font-size: 16px" href="#"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
-                        <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o" title="删除"></i></a>
-                    </td>
-                    <td class="text-muted">vuelidate结合Laravel后端数据注册验证</td>
-                    <td class="text-green">JellyBean</td>
-                    <td class="text-navy">23</td>
-                    <td class="text-navy">2017-02-12 08:12:34</td>
-                    <td class="text-navy">2017-02-12 08:12:34</td>
-                </tr>
+                @foreach($questions as $question)
+                    <tr>
+                        <td>
+                            <a style="font-size: 16px" href="#"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o"
+                                                                                   title="删除"></i></a>
+                        </td>
+                        <td class="text-muted">{{$question->title}}</td>
+                        <td class="text-green">{{$question->user->name}}</td>
+                        <td class="text-navy">{{$question->followers_count}}</td>
+                        <td class="text-navy">{{$question->created_at}}4</td>
+                        <td class="text-navy">{{$question->updated_at}}</td>
+                    </tr>
+                @endforeach
 
-                <tr>
-                    <td>
-                        <a style="font-size: 16px" href="#"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
-                        <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o" title="删除"></i></a>
-                    </td>
-                    <td class="text-muted">vue-router处理前端路由</td>
-                    <td class="text-green">JellyBean</td>
-                    <td class="text-navy">45</td>
-                    <td class="text-navy">2017-02-13 08:12:34</td>
-                    <td class="text-navy">2017-02-13 08:12:34</td>
-                </tr>
                 </tbody>
             </table>
         </div>

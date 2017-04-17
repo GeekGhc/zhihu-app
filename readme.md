@@ -34,11 +34,14 @@
 - [x] 删除问题(仅限问题的作者)
 
 ## 效果预览
+### 前台部分
 ![1](public/screenshot/7.png)
 ![2](public/screenshot/2.png)
 ![3](public/screenshot/6.png)
 ![4](public/screenshot/5.png)
 ![5](public/screenshot/3.png)
+### 后台部分
+![8](public/screenshot/8.png)
 
 ## 安装
 

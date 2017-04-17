@@ -6,7 +6,8 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li class="active">用户管理 - 注册会员</li>
+        <li>用户管理 </li>
+        <li class="active">注册会员</li>
     </ol>
 @stop
 

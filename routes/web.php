@@ -64,6 +64,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('/admin/profile','AdminController@adminInfo');//管理员资料
     Route::get('/admin/users','UsersController@index');//系统用户信息
 
-    Route::get('/admin/question/index','QuestionsController@index');//问题列表界面
+    Route::get('/admin/question/index','QuestionsController@index')->name('admin.questions');//问题列表界面
     Route::get('/admin/question/create','QuestionsController@create');//创建问题
+    Route::post('/admin/question','QuestionsController@store');//创建问题
 });

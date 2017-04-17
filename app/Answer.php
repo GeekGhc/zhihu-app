@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     protected $fillable = [
-        'user_id','question_id','body'
+        'user_id','question_id','body','is_first'
     ];
 
     //答案---用户
