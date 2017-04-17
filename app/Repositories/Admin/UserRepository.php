@@ -16,4 +16,9 @@ class UserRepository
     {
         return User::all();
     }
+
+    public function delete($id)
+    {
+
+    }
 }

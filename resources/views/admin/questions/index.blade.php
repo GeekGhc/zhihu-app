@@ -50,8 +50,13 @@
                     <tr>
                         <td>
                             <a style="font-size: 16px" href="/admin/question/edit/{{$question->id}}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
-                            <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o"
-                                                                                   title="删除"></i></a>
+                            <form action="/admin/question/{{$question->id}}" method="post" class="delete-form action-btn" style="display: inline-block;cursor: pointer">
+                                {{method_field('DELETE')}}
+                                {!! csrf_field() !!}
+                                <a style="font-size: 16px;color: #dd4b39;">
+                                    <i class="fa fa-fw fa-trash-o" title="删除"></i>
+                                </a>
+                            </form>
                         </td>
                         <td class="text-muted">{{$question->title}}</td>
                         <td class="text-green">{{$question->user->name}}</td>

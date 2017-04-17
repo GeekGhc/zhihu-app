@@ -43,10 +43,10 @@
                                 @if(Auth::check() && Auth::user()->owns($question))
                                     <div class="ui action-buttons">
                                         <a href="/questions/{{$question->id}}/edit" class="ui basic button green action-btn">编辑</a>
-                                        <form href="/questions/{{$question->id}}" method="post" class="delete-form action-btn">
+                                        <form action="/questions/{{$question->id}}" method="post" class="delete-form action-btn">
                                             {{method_field('DELETE')}}
                                             {!! csrf_field() !!}
-                                            <a class="ui basic button red">删除</a>
+                                            <button class="ui basic button red">删除</button>
                                         </form>
                                     </div>
                                 @endif

@@ -37,16 +37,20 @@
                     <th>昵称</th>
                     <th>邮箱</th>
                     <th>是否验证</th>
-                    <th>发布时间</th>
+                    <th>注册时间</th>
                     <th>更新时间</th>
                 </tr>
                 <!--tr-th end-->
                 @foreach($users as $user)
                     <tr>
                         <td>
-                            <a style="font-size: 16px" href="#"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
-                            <a style="font-size: 16px;color: #dd4b39;" href="#"><i class="fa fa-fw fa-trash-o"
+                            <a style="font-size: 16px" href="/admin/users/{{$user->id}}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <form href="/users/{{$user->id}}" method="post" class="delete-form action-btn" style="display: inline-block">
+                                {{method_field('DELETE')}}
+                                {!! csrf_field() !!}
+                            <a style="font-size: 16px;color: #dd4b39;"><i class="fa fa-fw fa-trash-o"
                                                                                    title="删除"></i></a>
+                            </form>
                         </td>
                         <td class="text-muted">{{$user->name}}</td>
                         <td class="text-muted">{{$user->email}}</td>

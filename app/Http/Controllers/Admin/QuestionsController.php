@@ -63,7 +63,7 @@ class QuestionsController extends Controller
         ]);
 
         $question->topics()->sync($topics);
-        return redirect()->route('admin.questions', [$question->id]);
+        return redirect()->route('admin.questions');
     }
 
     //删除问题
@@ -72,6 +72,6 @@ class QuestionsController extends Controller
         $question = $this->question->byId($id);
         $question->delete();
         $question->decrement('questions_count');
-        return redirect('admin.questions');
+        return redirect()->route('admin.questions');
     }
 }

@@ -62,9 +62,10 @@ Route::get("/people/{userName}/following",'ProfileController@following')->name('
 Route::group(['namespace' => 'Admin'], function () {
     Route::get('/dashboard', 'AdminController@index'); //后台首页
     Route::get('/admin/profile','AdminController@adminInfo');//管理员资料
-    Route::get('/admin/users','UsersController@index');//系统用户信息
+    Route::get('/admin/users','UsersController@index')->name('admin.users');//系统用户信息
     Route::get('/admin/users/{id}','UsersController@edit');//系统用户信息
     Route::patch('/admin/users/{id}','UsersController@update');//系统用户信息修改
+    Route::delete('/admin/users/{id}','UsersController@destroy');//系统用户删除
     Route::post('/admin/profile/update','UsersController@updateProfile');//管理员信息修改
 
     Route::get('/admin/question/index','QuestionsController@index')->name('admin.questions');//问题列表界面
@@ -72,4 +73,5 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::post('/admin/question','QuestionsController@store');//创建问题
     Route::get('/admin/question/edit/{id}','QuestionsController@edit');//编辑问题页面
     Route::patch('/admin/question/{id}','QuestionsController@update');//编辑问题
+    Route::delete('/admin/question/{id}','QuestionsController@destroy');//删除问题
 });
