@@ -51,7 +51,7 @@
                             <label>是否置顶
                                 <small class="text-red">*</small>
                             </label>
-                            <select class="js-example-placeholder-single form-control" name="is_first">
+                            <select class="js-example-placeholder-single form-control" name="is_first" id="question-tags">
                                 <option value=""></option>
                                 <option value="T">是</option>
                                 <option value="F">否</option>
@@ -89,11 +89,6 @@
     </script>
 
     <script>
-        $(function () {
-            //bootstrap WYSIHTML5 - text editor
-            $(".textarea").wysihtml5();
-        });
-
         var ue = UE.getEditor('container', {
             toolbars: [
                 ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
@@ -111,6 +106,13 @@
 
 
         $(function () {
+            var  tags = document.getElementById('question-tags');
+            if(true){
+                tags[1].selected = true
+            }else{
+                tags[2].selected = true
+            }
+
             function formatTopic (topic) {
                 return "<div class='select2-result-repository clearfix'>" +
                 "<div class='select2-result-repository__meta'>" +

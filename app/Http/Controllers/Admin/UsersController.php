@@ -17,9 +17,27 @@ class UsersController extends Controller
 //        $this->middleware('admin');
     }
 
+
+    //系统用户
     public function index()
     {
         $users = $this->user->getAllUsers();
         return view("admin.users.index",compact('users'));
+    }
+
+    //系统用户信息修改
+    public function update(Request $request,$id)
+    {
+
+    }
+
+    //管理员信息修改
+    public function updateProfile(Request $request)
+    {
+        user()->name = $request->get('name');
+        user()->email = $request->get('email');
+//        user()->password = bcrypt($request->get('password'));
+        user()->save();
+        return back();
     }
 }

@@ -34,6 +34,7 @@ class QuestionsController extends Controller
             'title' => $request->get('title'),
             'body' => $request->get('body'),
             'user_id' => Auth::id(),
+            'is_first' => $request->get('is_first')
         ];
         $question = $this->question->create($data);
         Auth::user()->increment('questions_count');
@@ -53,11 +54,24 @@ class QuestionsController extends Controller
     //编辑问题
     public function update(Request $request,$id)
     {
+        $question = $this->question->byId($id);
+        $topics = $this->question->normalizeTopics($request->get('topics'));
+        $question->update([
+            'title'=>$request->get('title'),
+            'body'=>$request->get('body'),
+            'is_first'=>$request->get('is_first')
+        ]);
 
+        $question->topics()->sync($topics);
+        return redirect()->route('admin.questions', [$question->id]);
     }
 
+    //删除问题
     public function destroy($id)
     {
-
+        $question = $this->question->byId($id);
+        $question->delete();
+        $question->decrement('questions_count');
+        return redirect('admin.questions');
     }
 }

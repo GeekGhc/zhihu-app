@@ -72,8 +72,6 @@
 @stop
 
 @section('other-js')
-    <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
-    <script src="/dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <script src="//cdn.bootcss.com/select2/4.0.3/js/select2.full.min.js"></script>
     <!-- 配置文件 -->
     <script type="text/javascript" src="{{ asset('vendor/ueditor/ueditor.config.js') }}"></script>
@@ -84,11 +82,6 @@
     </script>
 
     <script>
-        $(function () {
-            //bootstrap WYSIHTML5 - text editor
-            $(".textarea").wysihtml5();
-        });
-
         var ue = UE.getEditor('container', {
             toolbars: [
                 ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
