@@ -9,6 +9,7 @@
                         <div class="userCover-panel">
                             <div class="userCover">
                                 <img class="userCover-img" src="{{url('/images/pattern.jpeg')}}" alt="">
+                                <div class="userCover-link"></div>
                             </div>
                         </div>
                         <div class="header-wrapper">
@@ -40,9 +41,9 @@
                                         </div>
                                     </div>
                                     @if(Auth::id()===$user->id)
-                                        <a href="/setting" class="ui button inverted blue pull-right">编辑个人资料</a>
+                                        <a href="/setting" class="ui button inverted blue edit-profile-user">编辑个人资料</a>
                                     @else
-                                        <div class="col-md-3 pull-right">
+                                        <div class="edit-profile-user">
                                             <user-follow-button user="{{$user->id}}"></user-follow-button>
                                             <send-message user="{{$user->id}}"></send-message>
                                         </div>
@@ -52,6 +53,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-12">
                 <div class="profile-main">
                     <div class="profileMain">
                         @yield('profile-content')

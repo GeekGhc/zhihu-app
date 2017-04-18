@@ -42,7 +42,7 @@
                                 @endif
                             </div>
 
-                            <button type="submit" class="btn btn-success pull-right">发布问题</button>
+                            <button type="submit" class="ui button teal pull-right">发布问题</button>
                         </form>
                     </div>
 

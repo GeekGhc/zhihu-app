@@ -1,7 +1,6 @@
 <template>
     <div class="action-button">
-        <button class="btn btn-default pull-right"
-                style="margin-top: -36px;"
+        <button class="btn btn-default send-msg"
                 @click="showSendMessageForm"
         >发送私信
         </button>

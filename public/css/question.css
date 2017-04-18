@@ -7,7 +7,6 @@
 }
 .question-panel .question-wrapper{
     position: relative;
-    min-width: 1032px;
     padding: 20px 0;
     overflow: hidden;
     background: #fff;
@@ -169,6 +168,12 @@ a.topic{
 }
 .question-like.active{
     color: #F2711C;
+}
+.question-action-btns .action-button{
+    display: inline-table;
+}
+.question-action-btns .action-button:last-child{
+    float: right;
 }
 /***************** index *********************/
 .feed-list{

@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+    .header-wrapper .header-wrapper-main {
+        position: relative;
+        margin: 0 10px;
+        text-align: center;
+    }
+
+    .profile-header-content{
+        padding-left: 0px;
+        border-left: 0px solid transparent;
+        padding-top: 160px;
+        text-align: left;
+    }
+
+    .profile-header-content .profile-header-conHeader {
+        position: relative;
+        padding-right: 106px;
+        margin-bottom: 16px;
+    }
+
+    .profile-header-content .edit-profile-user {
+        position: relative;
+    }
+
+    .question-panel-inner .ui.action-buttons{
+        float: left;
+    }
+    .question-panel-main {
+        padding: 0;
+    }
+    .delete-form {
+        margin-left: 0px !important;
+    }
+    .about-question {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .write-answer{
+        float: left;
+    }
+    .nav .dropdown-toggle.nav-user-avatar{
+        padding-left: 15px !important;
+    }
+}

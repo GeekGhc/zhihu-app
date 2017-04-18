@@ -21,14 +21,14 @@
                             </div>
                             <div class="question-panel-footer">
                                 <div class="question-panel-inner">
-                                <comments type="question"
-                                          model="{{$question->id}}"
-                                          count="{{$question->comments()->count()}}">
-                                </comments>
-                                <div class="answer-item-action">
-                                    <i class="fa fa-paper-plane fa-icon-sm"></i>
-                                    分享
-                                </div>
+                                    <comments type="question"
+                                              model="{{$question->id}}"
+                                              count="{{$question->comments()->count()}}">
+                                    </comments>
+                                    <div class="answer-item-action">
+                                        <i class="fa fa-paper-plane fa-icon-sm"></i>
+                                        分享
+                                    </div>
                                     @if(Auth::check())
                                         <question-like question="{{$question->id}}"></question-like>
                                     @else
@@ -36,25 +36,27 @@
                                             <i class="fa fa-star fa-icon-sm"></i>收藏
                                         </a>
                                     @endif
-                                <div class="answer-item-action">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </div>
-
-                                @if(Auth::check() && Auth::user()->owns($question))
-                                    <div class="ui action-buttons">
-                                        <a href="/questions/{{$question->id}}/edit" class="ui basic button green action-btn">编辑</a>
-                                        <form action="/questions/{{$question->id}}" method="post" class="delete-form action-btn">
-                                            {{method_field('DELETE')}}
-                                            {!! csrf_field() !!}
-                                            <button class="ui basic button red">删除</button>
-                                        </form>
+                                    <div class="answer-item-action">
+                                        <i class="fa fa-ellipsis-h"></i>
                                     </div>
-                                @endif
+
+                                    @if(Auth::check() && Auth::user()->owns($question))
+                                        <div class="ui action-buttons">
+                                            <a href="/questions/{{$question->id}}/edit"
+                                               class="ui basic button green action-btn">编辑</a>
+                                            <form action="/questions/{{$question->id}}" method="post"
+                                                  class="delete-form action-btn">
+                                                {{method_field('DELETE')}}
+                                                {!! csrf_field() !!}
+                                                <button class="ui basic button red">删除</button>
+                                            </form>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-12 col-xs-12">
                         @if(Auth::check())
                             <div class="about-question">
                                 <h2>{{ $question->followers_count }}</h2>
@@ -62,7 +64,7 @@
                             </div>
                             <div class="">
                                 <question-follow-button question="{{$question->id}}"></question-follow-button>
-                                <a href="#editor" class="btn btn-primary pull-right">
+                                <a href="#editor" class="btn btn-primary pull-right write-answer">
                                     撰写答案
                                 </a>
                             </div>
@@ -82,49 +84,49 @@
                     </div>
 
                     @if($question->answers_count !== 0)
-                    <div class="panel-body">
+                        <div class="panel-body">
 
-                        @foreach($question->answers as $answer)
-                            <div class="media answer-item">
-                                <div class="media-body">
-                                    <div class="answer-info-avatar">
-                                        <img src="{{\Auth::user()->avatar}}">
+                            @foreach($question->answers as $answer)
+                                <div class="media answer-item">
+                                    <div class="media-body">
+                                        <div class="answer-info-avatar">
+                                            <img src="{{\Auth::user()->avatar}}">
+                                        </div>
+                                        <h4 class="media-heading answer-item-name">
+                                            <a href="/people/{{$answer->user->name}}">
+                                                {{$answer->user->name}}
+                                            </a>
+                                        </h4>
+                                        <div class="answer-item-content">
+                                            {!! $answer->body !!}
+                                        </div>
                                     </div>
-                                    <h4 class="media-heading answer-item-name">
-                                        <a href="/people/{{$answer->user->name}}">
-                                            {{$answer->user->name}}
-                                        </a>
-                                    </h4>
-                                    <div class="answer-item-content">
-                                        {!! $answer->body !!}
-                                    </div>
-                                </div>
                                     <div class="answer-item-time">
-                                    发布于 {{$answer->created_at->format('Y-m-d')}}
-                                </div>
-                                <div class="answer-item-actions">
-                                    <user-vote-button
-                                            answer="{{$answer->id}}"
-                                            count="{{$answer->votes_count}}"
-                                    >
-                                    </user-vote-button>
-                                    <comments type="answer"
-                                              model="{{$answer->id}}"
-                                              count="{{$answer->comments()->count()}}">
-                                    </comments>
-                                    <div class="answer-item-action">
-                                        <i class="fa fa-paper-plane fa-icon-sm"></i>
-                                        分享
+                                        发布于 {{$answer->created_at->format('Y-m-d')}}
                                     </div>
-                                    <div class="answer-item-action">
-                                        <i class="fa fa-ellipsis-h"></i>
+                                    <div class="answer-item-actions">
+                                        <user-vote-button
+                                                answer="{{$answer->id}}"
+                                                count="{{$answer->votes_count}}"
+                                        >
+                                        </user-vote-button>
+                                        <comments type="answer"
+                                                  model="{{$answer->id}}"
+                                                  count="{{$answer->comments()->count()}}">
+                                        </comments>
+                                        <div class="answer-item-action">
+                                            <i class="fa fa-paper-plane fa-icon-sm"></i>
+                                            分享
+                                        </div>
+                                        <div class="answer-item-action">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
 
-                    </div>
+                        </div>
                     @else
                         <div class="panel-body question-empty-panel">
                             <i>╮(╯∀╰)╭</i>
@@ -178,8 +180,10 @@
                         </div>
                         @if(Auth::check())
                             @if(Auth::id()!==$question->user->id)
-                        <user-follow-button user="{{$question->user->id}}"></user-follow-button>
-                        <send-message user="{{$question->user->id}}"></send-message>
+                                <div class="question-action-btns">
+                                    <user-follow-button user="{{$question->user->id}}"></user-follow-button>
+                                    <send-message user="{{$question->user->id}}"></send-message>
+                                </div>
                             @endif
                         @endif
                     </div>
@@ -189,14 +193,14 @@
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     @if(Auth::check())
-                    <div class="panel-heading">
-                        <div class="answer-info-panel">
-                            <div class="answer-info-avatar">
-                                <img src="{{\Auth::user()->avatar}}">
+                        <div class="panel-heading">
+                            <div class="answer-info-panel">
+                                <div class="answer-info-avatar">
+                                    <img src="{{\Auth::user()->avatar}}">
+                                </div>
+                                <div class="answer-content">{{\Auth::user()->name}}</div>
                             </div>
-                            <div class="answer-content">{{\Auth::user()->name}}</div>
                         </div>
-                    </div>
                     @endif
                     <div class="panel-body">
                         @if(Auth::check())
@@ -222,22 +226,22 @@
             </div>
         </div>
     </div>
-    @section('js')
-        <script>
-            var ue = UE.getEditor('container', {
-                toolbars: [
-                    ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
-                ],
-                elementPathEnabled: false,
-                enableContextMenu: false,
-                autoClearEmptyNode: true,
-                wordCount: false,
-                imagePopup: false,
-                autotypeset: {indent: true, imageBlockLine: 'center'}
-            });
-            ue.ready(function () {
-                ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-            });
-        </script>
-    @endsection
+@section('js')
+    <script>
+        var ue = UE.getEditor('container', {
+            toolbars: [
+                ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
+            ],
+            elementPathEnabled: false,
+            enableContextMenu: false,
+            autoClearEmptyNode: true,
+            wordCount: false,
+            imagePopup: false,
+            autotypeset: {indent: true, imageBlockLine: 'center'}
+        });
+        ue.ready(function () {
+            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
+        });
+    </script>
+@endsection
 @endsection
