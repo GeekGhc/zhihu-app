@@ -15,11 +15,20 @@
     background: #f7f8fa;
     border-top-right-radius: 1px;
     border-top-left-radius: 1px;
+    cursor: pointer;
+    position: relative;
 }
 .userCover .userCover-img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.userCover:hover .userCover-link{
+    position: absolute;
+    width: 100%;
+    top:0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.4);
 }
 .header-wrapper{
     position: relative;
@@ -65,7 +74,16 @@
 .profile-header-content .profile-header-conBody{
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    padding-right: 106px;
+}
+.profile-header-content .edit-profile-user{
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+}
+.profile-header-content .edit-profile-user .action-button{
+    display: inline-table;
+    margin-right: 12px;
 }
 .profile-header-conBody .ProfileHeader-info {
     font-size: 14px;

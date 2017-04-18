@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'setting'=> ['city'=>'','site'=>'','github'=>'','bio'=>'']
         ]);
         $user->assignRole('member');
-        $this->sendVerifyEmailTo($user);
+//        $this->sendVerifyEmailTo($user);
         return $user;
     }
 

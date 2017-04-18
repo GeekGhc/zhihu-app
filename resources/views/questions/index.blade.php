@@ -12,7 +12,9 @@
                         <div class="feed-item-inner">
                             <div class="feed-avatar">
                                 <a href="/people/{{$question->user->name}}"><img src="{{$question->user->avatar}}" alt=""></a>
+                                @if($question->is_first == "T")
                                 <span class="badge bell-badge top-question"><i class="fa fa-thumb-tack"></i></span>
+                                @endif
                             </div>
                             <div class="feed-main">
                                 <div class="feed-content">

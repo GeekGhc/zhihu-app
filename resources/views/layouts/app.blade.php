@@ -9,17 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    {{--<link href="{{elixir('/css/app.css')}}" rel="stylesheet">--}}
-    <link rel="stylesheet" href="{{url('css/source/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/source/select2.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/style.css')}}">
-    <link rel="stylesheet" href="{{url('css/source/semantic.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/source/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{url('css/index.css')}}">
-    <link rel="stylesheet" href="{{url('css/question.css')}}">
-    <link rel="stylesheet" href="{{url('css/notify.css')}}">
-    <link rel="stylesheet" href="{{url('css/profile.css')}}">
-    <link rel="stylesheet" href="{{url('css/responsive.css')}}">
+    <link href="{{elixir('/css/app.css')}}" rel="stylesheet">
     @yield("header-css")
     @show
 

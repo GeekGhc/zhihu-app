@@ -90,7 +90,7 @@
                                 <div class="media answer-item">
                                     <div class="media-body">
                                         <div class="answer-info-avatar">
-                                            <img src="{{\Auth::user()->avatar}}">
+                                            <img src="{{$answer->user->avatar}}">
                                         </div>
                                         <h4 class="media-heading answer-item-name">
                                             <a href="/people/{{$answer->user->name}}">

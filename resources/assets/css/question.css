@@ -7,7 +7,6 @@
 }
 .question-panel .question-wrapper{
     position: relative;
-    min-width: 1032px;
     padding: 20px 0;
     overflow: hidden;
     background: #fff;
@@ -170,6 +169,12 @@ a.topic{
 .question-like.active{
     color: #F2711C;
 }
+.question-action-btns .action-button{
+    display: inline-table;
+}
+.question-action-btns .action-button:last-child{
+    float: right;
+}
 /***************** index *********************/
 .feed-list{
 
@@ -186,6 +191,13 @@ a.topic{
 .feed-item .feed-avatar{
     float: left;
     margin: 3px 0 0;
+    position: relative;
+}
+.feed-avatar .top-question{
+    position: absolute;
+    top:-8px;
+    right: -6px;
+    padding: 5px 7px !important;
 }
 .feed-item .feed-avatar img{
     border-radius: 3%;

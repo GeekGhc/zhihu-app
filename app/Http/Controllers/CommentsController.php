@@ -69,12 +69,12 @@ class CommentsController extends Controller
             $data['question']=$question;
             $question->user->notify(new QuestionCommentNotification($data));
         }else{
+            $this->answer->addCommentsCount(request('model'));
             $question = $this->answer->byId(request('model'))->question;
             $data['question']=$question;
             $answer = $this->answer->byId(request('model'));
             $answer->user->notify(new AnswerReplyNotification($data));
         }
-        $this->answer->addCommentsCount(request('model'));
         user('api')->increment('comments_count');
         return  $this->comment->create([
             'commentable_id'=>request('model'),
