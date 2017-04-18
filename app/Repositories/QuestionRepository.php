@@ -39,7 +39,7 @@ class QuestionRepository
     //拿到所有问题
     public function getQuestionsFeed()
     {
-        return Question::published()->latest('updated_at')->with('user')->get();
+        return Question::published()->orderBy('is_first','desc')->latest('updated_at')->with('user')->get();
     }
 
     //指定问题的评论
