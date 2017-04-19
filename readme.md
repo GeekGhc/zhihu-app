@@ -2,7 +2,8 @@
 基于**Laravel5.3** 开发
 
 ## 前言
-基于[laravist](https://www.laravist.com/)社区知乎系列项目
+基于 [laravist](https://www.laravist.com/)社区知乎系列项目
+后台模板采用 [AdminLTE-For_Laravel](https://github.com/GeekGhc/adminLTE-for-laravel)
 
 ## 功能
 
