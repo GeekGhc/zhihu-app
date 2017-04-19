@@ -13,6 +13,7 @@ class QuestionsController extends Controller
     public function __construct(QuestionRepository $question)
     {
         $this->question = $question;
+        $this->middleware('admin');
     }
     public function index()
     {

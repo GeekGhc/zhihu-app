@@ -11,6 +11,7 @@ class TopicsController
     public function __construct(TopicRepository $topic)
     {
         $this->topic = $topic;
+        $this->middleware('admin');
     }
     //标签列表
     public function index()

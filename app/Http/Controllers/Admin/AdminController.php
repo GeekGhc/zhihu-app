@@ -15,7 +15,7 @@ class AdminController extends Controller
     public function __construct(AdminRepository $admin)
     {
         $this->admin = $admin;
-//        $this->middleware('admin');
+        $this->middleware('admin');
     }
 
     public function index()

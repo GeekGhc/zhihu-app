@@ -13,6 +13,7 @@ class CommentsController extends Controller
     public function __construct(CommentRepository $comment)
     {
         $this->comment = $comment;
+        $this->middleware('admin');
     }
 
     //评论列表
