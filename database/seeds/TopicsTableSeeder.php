@@ -21,6 +21,7 @@ class TopicsTableSeeder extends Seeder
         \App\Topic::create(['name'=>"Centos",'bio'=>"centos"]);
         \App\Topic::create(['name'=>"ThinkPHP",'bio'=>"thinkphp"]);
         \App\Topic::create(['name'=>"MAC",'bio'=>"mac"]);
-
+        \App\Topic::create(['name'=>"Centos",'bio'=>"centos"]);
+        \App\Topic::create(['name'=>"Phpunit",'bio'=>"phpunit"]);
     }
 }

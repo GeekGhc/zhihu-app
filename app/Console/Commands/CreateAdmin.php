@@ -85,7 +85,6 @@ class CreateAdmin extends Command
         ]);
         $user->assignRole('admin');
         return $user;
-
     }
 
 

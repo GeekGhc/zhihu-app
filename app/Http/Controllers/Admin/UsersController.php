@@ -48,7 +48,7 @@ class UsersController extends Controller
     {
         user()->name = $request->get('name');
         user()->email = $request->get('email');
-//        user()->password = bcrypt($request->get('password'));
+        user()->password = bcrypt($request->get('password'));
         user()->save();
         return back();
     }
