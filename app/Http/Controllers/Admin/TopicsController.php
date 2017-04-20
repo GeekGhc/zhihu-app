@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 use App\Repositories\TopicRepository;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class TopicsController
+class TopicsController extends Controller
 {
     private $topic;
     public function __construct(TopicRepository $topic)
