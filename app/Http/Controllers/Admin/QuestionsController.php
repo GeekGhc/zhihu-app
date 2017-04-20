@@ -47,9 +47,8 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         $question = $this->question->byId($id);
-        if(Auth::user()->owns($question)){
-            return view("admin.questions.edit",compact('question'));
-        }
+        return view("admin.questions.edit",compact('question'));
+
     }
 
     //编辑问题

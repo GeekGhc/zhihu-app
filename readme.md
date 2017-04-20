@@ -74,3 +74,8 @@
 
 ### 5. 创建数据
 > php artisan zhihu:install
+
+### 6.管理员创建
+> php artisan create:admin
+
+填写完指令要求信息后 管理员创建成功
