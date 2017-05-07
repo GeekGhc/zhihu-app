@@ -25,7 +25,7 @@ class QuestionsController extends Controller
     public function index()
     {
         $questions = $this->questionRepository->getQuestionsFeed();
-        return view('questions.index',compact('questions'));
+        return view('questions.index', compact('questions'));
     }
 
     //创建问题视图
@@ -38,6 +38,7 @@ class QuestionsController extends Controller
     //创建问题
     public function store(StoreQuestionRequest $request)
     {
+
         $topics = $this->questionRepository->normalizeTopics($request->get('topics'));
         $data = [
             'title' => $request->get('title'),
@@ -62,8 +63,8 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         $question = $this->questionRepository->byId($id);
-        if(Auth::user()->owns($question)){
-            return  view('questions.edit',compact('question'));
+        if (Auth::user()->owns($question)) {
+            return view('questions.edit', compact('question'));
         }
         return back();
     }
@@ -74,8 +75,8 @@ class QuestionsController extends Controller
         $question = $this->questionRepository->byId($id);
         $topics = $this->questionRepository->normalizeTopics($request->get('topics'));
         $question->update([
-            'title'=>$request->get('title'),
-            'body'=>$request->get('body'),
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
         ]);
 
         $question->topics()->sync($topics);
@@ -87,12 +88,12 @@ class QuestionsController extends Controller
     {
         $question = $this->questionRepository->byId($id);
 
-        if(Auth::user()->owns($question)){
+        if (Auth::user()->owns($question)) {
             $question->delete();
             Auth::user()->decrement('questions_count');
             return redirect('/');
         }
-        abort(403,'Forbidden');
+        abort(403, 'Forbidden');
     }
 
 }

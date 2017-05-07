@@ -60,7 +60,7 @@ Route::get("/people/{userName}/following",'ProfileController@following')->name('
 
 
 Route::group(['namespace' => 'Admin'], function () {
-    Route::get('/dashboard', 'AdminController@index'); //后台首页
+    Route::get('/dashboard', 'AdminController@index')->name('admin.index'); //后台首页
     Route::get('/admin/profile','AdminController@adminInfo');//管理员资料
     Route::get('/admin/users','UsersController@index')->name('admin.users');//系统用户信息
     Route::get('/admin/users/{id}','UsersController@edit');//系统用户信息

@@ -90,7 +90,7 @@
                                 <li>
                                     <a href="/setting"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
                                 </li>
-                                @if(Auth::user()->isAdmin())
+                                @if(Auth::user()->canEnterBack())
                                 <li>
                                     <a href="/dashboard"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
                                 </li>

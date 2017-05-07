@@ -30,9 +30,7 @@
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body">描述</label>
 
-                                <div id="container" name="body" type="text/plain" style="height:200px;">
-                                    {!! old('body') !!}
-                                </div>
+                                <script id="container" name="body" type="text/plain" style="height:200px;">{!! old('body') !!}</script>
 
                                 @if ($errors->has('body'))
                                     <span class="help-block">

@@ -22,6 +22,6 @@ class CommentPolicy
 
     public function destroy(User $user,Comment $comment)
     {
-        return $user->hasRole('admin-two');
+        return $user->hasRole('admin-two') || $user->hasRole('admin');
     }
 }

@@ -43,6 +43,10 @@ class User extends Authenticatable
         return $this->hasRole('admin');
     }
 
+    public function canEnterBack()
+    {
+        return $this->hasRole('admin') || $this->hasRole('admin-one') ||$this->hasRole('admin-two');
+    }
     public function settings()
     {
         return new Setting($this);

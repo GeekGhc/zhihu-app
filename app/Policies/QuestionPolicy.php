@@ -23,13 +23,13 @@ class QuestionPolicy
     //更新问题
     public function update(User $user,Question $question)
     {
-        return $user->hasRole('admin-one');
+        return $user->hasRole('admin-one') || $user->hasRole('admin');
     }
 
     //删除问题
     public function destroy(User $user,Question $question)
     {
-        return $user->hasRole('admin-one');
+        return $user->hasRole('admin-one') || $user->hasRole('admin');
     }
 
 }

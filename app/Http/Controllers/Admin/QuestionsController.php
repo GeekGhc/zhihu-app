@@ -18,13 +18,18 @@ class QuestionsController extends Controller
     public function index()
     {
         $questions = $this->question->getQuestionsFeed();
-        return view('admin.questions.index',compact('questions'));
+        if(user()->hasRole('admin') || user()->hasRole('admin-one')){
+            return view('admin.questions.index',compact('questions'));
+        }
+        return redirect()->route('admin.index');
     }
 
     //创建问题页面
     public function create()
     {
-        return view("admin.questions.create");
+        if(user()->hasRole('admin')){
+            return view("admin.questions.create");
+        }
     }
 
     //保存问题
@@ -46,8 +51,11 @@ class QuestionsController extends Controller
     //编辑问题页面
     public function edit($id)
     {
-        $question = $this->question->byId($id);
-        return view("admin.questions.edit",compact('question'));
+        if(user()->hasRole('admin') || user()->hasRole('admin-one')){
+            $question = $this->question->byId($id);
+            return view("admin.questions.edit",compact('question'));
+        }
+        return redirect()->route('admin.index');
 
     }
 
@@ -69,8 +77,11 @@ class QuestionsController extends Controller
     //删除问题
     public function destroy($id)
     {
-        $question = $this->question->byId($id);
-        $question->delete();
-        return redirect()->route('admin.questions');
+        if(user()->hasRole('admin') || user()->hasRole('admin-one')){
+            $question = $this->question->byId($id);
+            $question->delete();
+            return redirect()->route('admin.questions');
+        }
+        return redirect()->route('admin.index');
     }
 }

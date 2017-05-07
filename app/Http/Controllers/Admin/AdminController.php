@@ -20,13 +20,16 @@ class AdminController extends Controller
 
     public function index()
     {
-        $collects = $this->admin->dashboard_init_data();
-        return view('admin.dashboard.index', compact('collects'));
+            $collects = $this->admin->dashboard_init_data();
+            return view('admin.dashboard.index', compact('collects'));
     }
 
     public function adminInfo()
     {
-        $user = Auth::user();
-        return view('admin.users.admin',compact('user'));
+        if(user()->hasRole('admin')){
+            $user = Auth::user();
+            return view('admin.users.admin',compact('user'));
+        }
+        return redirect()->route('admin.index');
     }
 }
